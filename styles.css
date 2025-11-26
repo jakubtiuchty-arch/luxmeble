@@ -1640,33 +1640,32 @@ section {
 
     .about-images {
         order: 2;
+        position: relative;
+    }
+
+    .about-image-main {
+        position: relative;
     }
 
     .about-image-secondary {
-        position: relative;
-        bottom: 0;
-        right: 0;
-        width: 70%;
-        margin-left: auto;
-        margin-top: -60px;
+        display: none;
     }
 
     .about-experience-badge {
         position: absolute;
-        top: auto;
-        bottom: 20px;
-        left: 20px;
-        right: auto;
-        margin-top: 0;
-        padding: 15px 20px;
+        top: 20px;
+        right: 20px;
+        left: auto;
+        bottom: auto;
+        padding: 12px 16px;
     }
 
     .about-experience-badge .experience-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .about-experience-badge .experience-text {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     .about-features {
