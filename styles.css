@@ -1651,6 +1651,14 @@ section {
         margin-top: -60px;
     }
 
+    .about-experience-badge {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 20px;
+        display: inline-block;
+    }
+
     .about-features {
         grid-template-columns: 1fr;
     }
