@@ -405,6 +405,12 @@ a {
     width: 100%;
 }
 
+.btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
 /* Hero Stats */
 .hero-stats {
     display: flex;
