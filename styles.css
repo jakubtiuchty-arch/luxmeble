@@ -1627,6 +1627,11 @@ section {
     .hero-stats {
         flex-direction: column;
         gap: 30px;
+        padding-bottom: 80px;
+    }
+
+    .scroll-indicator {
+        display: none;
     }
 
     .about-grid {
