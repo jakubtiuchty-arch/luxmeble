@@ -435,7 +435,7 @@ function createParticle(container) {
         position: absolute;
         width: ${size}px;
         height: ${size}px;
-        background: rgba(201, 162, 39, ${opacity});
+        background: rgba(45, 90, 71, ${opacity});
         border-radius: 50%;
         left: ${x}%;
         top: ${y}%;
