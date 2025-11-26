@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <!-- Main Page -->
+    <url>
+        <loc>https://lux-meble.pl/</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/hero-1.jpeg</image:loc>
+            <image:title>Lux-Meble Trzebnica - Meble na wymiar</image:title>
+            <image:caption>Ekskluzywne meble na wymiar z Trzebnicy</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Section: Usługi (Services) -->
+    <url>
+        <loc>https://lux-meble.pl/#uslugi</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Section: O nas (About) -->
+    <url>
+        <loc>https://lux-meble.pl/#o-nas</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/Precyzja-1.png</image:loc>
+            <image:title>Precyzja wykonania - Lux-Meble</image:title>
+        </image:image>
+    </url>
+
+    <!-- Section: Realizacje (Portfolio) -->
+    <url>
+        <loc>https://lux-meble.pl/#realizacje</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/kuchania-1.jpg</image:loc>
+            <image:title>Nowoczesna kuchnia na wymiar</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/kuchania-2.jpg</image:loc>
+            <image:title>Kuchnia na wymiar Trzebnica</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/kuchania-3.jpg</image:loc>
+            <image:title>Elegancka kuchnia</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/kuchania-4.jpg</image:loc>
+            <image:title>Kuchnia z wyspą</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/szafa-1.jpg</image:loc>
+            <image:title>Szafa wnękowa</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/szafa-2.jpg</image:loc>
+            <image:title>Szafa z drzwiami przesuwnymi</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/szafa-3.jpg</image:loc>
+            <image:title>Szafa na wymiar</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/lazienka-1.jpg</image:loc>
+            <image:title>Meble łazienkowe</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/lazienka-2.jpg</image:loc>
+            <image:title>Elegancka łazienka</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/lazienka-3.jpg</image:loc>
+            <image:title>Łazienka na wymiar</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/lazienka-4.jpg</image:loc>
+            <image:title>Minimalistyczna łazienka</image:title>
+        </image:image>
+    </url>
+
+    <!-- Section: Opinie (Testimonials) -->
+    <url>
+        <loc>https://lux-meble.pl/#opinie</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Section: Kontakt (Contact) -->
+    <url>
+        <loc>https://lux-meble.pl/#kontakt</loc>
+        <lastmod>2025-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset>

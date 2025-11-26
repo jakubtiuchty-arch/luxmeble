@@ -1,0 +1,23 @@
+# Robots.txt for Lux-Meble Trzebnica
+# https://lux-meble.pl
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://lux-meble.pl/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block access to sensitive directories (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow all images
+Allow: /images/
+
+# Allow CSS and JS for proper rendering
+Allow: /*.css
+Allow: /*.js
