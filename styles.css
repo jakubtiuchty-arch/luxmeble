@@ -664,8 +664,8 @@ section {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-    max-width: 495px;
-    max-height: 385px;
+    max-width: 520px;
+    max-height: 480px;
 }
 
 .about-image-main img {
@@ -673,7 +673,7 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    max-height: 385px;
+    max-height: 480px;
 }
 
 .about-image-secondary {
@@ -717,7 +717,7 @@ section {
 .about-experience-badge {
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 100px;
     background: var(--color-accent);
     color: var(--color-text-light);
     padding: 25px;
