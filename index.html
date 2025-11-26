@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lux-Meble Trzebnica - Ekskluzywne meble na wymiar. Kuchnie, szafy, garderoby, meble łazienkowe. 10 lat doświadczenia.">
+    <title>Lux-Meble Trzebnica | Ekskluzywne Meble Na Wymiar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Start</a></li>
+                <li><a href="#uslugi" class="nav-link">Usługi</a></li>
+                <li><a href="#o-nas" class="nav-link">O nas</a></li>
+                <li><a href="#realizacje" class="nav-link">Realizacje</a></li>
+                <li><a href="#opinie" class="nav-link">Opinie</a></li>
+                <li><a href="#kontakt" class="nav-link nav-cta">Kontakt</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">★</span>
+                <span>10 lat doświadczenia</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">Tworzymy</span>
+                <span class="title-line title-accent">Wyjątkowe</span>
+                <span class="title-line">Wnętrza</span>
+            </h1>
+            <p class="hero-subtitle">
+                Ekskluzywne meble na wymiar z Trzebnicy. Kuchnie, szafy, garderoby
+                i meble łazienkowe zaprojektowane specjalnie dla Ciebie.
+            </p>
+            <div class="hero-buttons">
+                <a href="#kontakt" class="btn btn-primary">
+                    <span>Bezpłatna wycena</span>
+                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="10">0</span>
+                    <span class="stat-label">Lat na rynku</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">Realizacji</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-suffix">%</span>
+                    <span class="stat-label">Zadowolonych klientów</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Przewiń w dół</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="uslugi">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Nasza oferta</span>
+                <h2 class="section-title">Meble <span class="text-gold">na wymiar</span></h2>
+                <p class="section-subtitle">
+                    Każdy projekt tworzymy indywidualnie, dostosowując go do Twoich potrzeb i przestrzeni
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="8" y="20" width="48" height="36" rx="2"/>
+                            <rect x="12" y="24" width="18" height="14" rx="1"/>
+                            <rect x="34" y="24" width="18" height="14" rx="1"/>
+                            <line x1="8" y1="42" x2="56" y2="42"/>
+                            <circle cx="23" cy="50" r="2"/>
+                            <circle cx="41" cy="50" r="2"/>
+                            <path d="M20 8h24v12H20z"/>
+                            <line x1="28" y1="8" x2="28" y2="20"/>
+                            <line x1="36" y1="8" x2="36" y2="20"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Kuchnie</h3>
+                    <p class="service-desc">
+                        Funkcjonalne i eleganckie kuchnie na wymiar. Od nowoczesnych po klasyczne
+                        - projektujemy przestrzenie, w których gotowanie staje się przyjemnością.
+                    </p>
+                    <ul class="service-features">
+                        <li>Projekty 3D</li>
+                        <li>Blaty kompozytowe i kamienne</li>
+                        <li>Systemy cargo i organizery</li>
+                        <li>Oświetlenie LED</li>
+                    </ul>
+                    <a href="#kontakt" class="service-link">
+                        Zapytaj o wycenę
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="10" y="8" width="44" height="52" rx="2"/>
+                            <line x1="32" y1="8" x2="32" y2="60"/>
+                            <line x1="10" y1="34" x2="54" y2="34"/>
+                            <circle cx="26" cy="21" r="2"/>
+                            <circle cx="38" cy="21" r="2"/>
+                            <circle cx="26" cy="47" r="2"/>
+                            <circle cx="38" cy="47" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Szafy</h3>
+                    <p class="service-desc">
+                        Szafy wnękowe i wolnostojące z drzwiami przesuwnymi lub rozwieranymi.
+                        Maksymalne wykorzystanie przestrzeni przy zachowaniu estetyki.
+                    </p>
+                    <ul class="service-features">
+                        <li>Drzwi przesuwne i rozwierane</li>
+                        <li>Lustra i lacobel</li>
+                        <li>Systemy organizacji wnętrza</li>
+                        <li>Oświetlenie sensorowe</li>
+                    </ul>
+                    <a href="#kontakt" class="service-link">
+                        Zapytaj o wycenę
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="8" y="12" width="48" height="44" rx="2"/>
+                            <line x1="8" y1="28" x2="56" y2="28"/>
+                            <line x1="8" y1="44" x2="56" y2="44"/>
+                            <line x1="20" y1="12" x2="20" y2="56"/>
+                            <line x1="44" y1="12" x2="44" y2="56"/>
+                            <rect x="24" y="32" width="16" height="8" rx="1"/>
+                            <circle cx="14" cy="36" r="1.5"/>
+                            <circle cx="50" cy="36" r="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Garderoby</h3>
+                    <p class="service-desc">
+                        Kompleksowe garderoby walk-in oraz garderoby wnękowe. Miejsce na wszystko,
+                        idealnie zorganizowane i dostosowane do Twojego stylu życia.
+                    </p>
+                    <ul class="service-features">
+                        <li>Garderoby walk-in</li>
+                        <li>Wysuwane kosze i półki</li>
+                        <li>Wieszaki na akcesoria</li>
+                        <li>Lustra z oświetleniem</li>
+                    </ul>
+                    <a href="#kontakt" class="service-link">
+                        Zapytaj o wycenę
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="12" y="28" width="40" height="24" rx="2"/>
+                            <rect x="16" y="32" width="14" height="16" rx="1"/>
+                            <rect x="34" y="32" width="14" height="16" rx="1"/>
+                            <circle cx="23" cy="40" r="2"/>
+                            <circle cx="41" cy="40" r="2"/>
+                            <ellipse cx="32" cy="16" rx="16" ry="8"/>
+                            <path d="M16 16v12M48 16v12"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Łazienki</h3>
+                    <p class="service-desc">
+                        Meble łazienkowe odporne na wilgoć i temperaturę. Szafki pod umywalkę,
+                        słupki, półki - wszystko dopasowane do Twojej łazienki.
+                    </p>
+                    <ul class="service-features">
+                        <li>Materiały wodoodporne</li>
+                        <li>Szafki pod umywalkę</li>
+                        <li>Słupki i półki</li>
+                        <li>Blaty z odpływem liniowym</li>
+                    </ul>
+                    <a href="#kontakt" class="service-link">
+                        Zapytaj o wycenę
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="o-nas">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-images">
+                    <div class="about-image-main">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="10" y="30" width="100" height="60" rx="2"/>
+                                <rect x="15" y="35" width="40" height="25" rx="1"/>
+                                <rect x="60" y="35" width="45" height="50" rx="1"/>
+                                <line x1="15" y1="70" x2="55" y2="70"/>
+                                <line x1="15" y1="80" x2="55" y2="80"/>
+                            </svg>
+                            <span>Precyzja wykonania</span>
+                        </div>
+                    </div>
+                    <div class="about-image-secondary">
+                        <div class="image-placeholder">
+                            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <circle cx="40" cy="40" r="35"/>
+                                <path d="M25 40h30M40 25v30"/>
+                                <circle cx="40" cy="40" r="15"/>
+                            </svg>
+                            <span>Indywidualne podejście</span>
+                        </div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="experience-number">10</span>
+                        <span class="experience-text">lat<br>doświadczenia</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="section-tag">O nas</span>
+                    <h2 class="section-title">Pasja do <span class="text-gold">perfekcji</span></h2>
+                    <p class="about-text">
+                        <strong>Lux-Meble</strong> to trzebnicka firma z 10-letnim doświadczeniem
+                        w tworzeniu ekskluzywnych mebli na wymiar. Łączymy tradycyjne rzemiosło
+                        z nowoczesnymi technologiami, aby dostarczać meble najwyższej jakości.
+                    </p>
+                    <p class="about-text">
+                        Każdy projekt traktujemy indywidualnie. Od pierwszego pomiaru, przez
+                        projektowanie w 3D, aż po precyzyjny montaż - dbamy o każdy szczegół.
+                        Nasza praca to nie tylko meble - to funkcjonalne dzieła sztuki.
+                    </p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                    <path d="M2 17l10 5 10-5"/>
+                                    <path d="M2 12l10 5 10-5"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Projektowanie 3D</h4>
+                                <p>Wizualizacja przed realizacją</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Gwarancja jakości</h4>
+                                <p>Najlepsze materiały i okucia</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Terminowość</h4>
+                                <p>Dotrzymujemy ustalonych terminów</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 010 7.75"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Kompleksowa obsługa</h4>
+                                <p>Od pomysłu do montażu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Jak pracujemy</span>
+                <h2 class="section-title">Proces <span class="text-gold">realizacji</span></h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Konsultacja</h3>
+                        <p>Bezpłatne spotkanie i omówienie Twoich potrzeb oraz możliwości</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Pomiar</h3>
+                        <p>Precyzyjny pomiar w Twoim domu - bezpłatnie i bez zobowiązań</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Projekt 3D</h3>
+                        <p>Wizualizacja projektu w 3D - zobaczysz meble przed ich powstaniem</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3>Produkcja</h3>
+                        <p>Wykonanie mebli z najwyższą starannością w naszym zakładzie</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3>Montaż</h3>
+                        <p>Profesjonalny montaż przez nasz doświadczony zespół</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="realizacje">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Nasze <span class="text-gold">realizacje</span></h2>
+                <p class="section-subtitle">
+                    Każdy projekt to unikalna historia. Zobacz wybrane realizacje z ostatnich lat.
+                </p>
+            </div>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">Wszystkie</button>
+                <button class="filter-btn" data-filter="kuchnie">Kuchnie</button>
+                <button class="filter-btn" data-filter="szafy">Szafy</button>
+                <button class="filter-btn" data-filter="garderoby">Garderoby</button>
+                <button class="filter-btn" data-filter="lazienki">Łazienki</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="kuchnie">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="10" y="30" width="80" height="50" rx="2"/>
+                                <rect x="15" y="35" width="30" height="20" rx="1"/>
+                                <rect x="50" y="35" width="35" height="40" rx="1"/>
+                                <line x1="15" y1="65" x2="45" y2="65"/>
+                                <line x1="15" y1="75" x2="45" y2="75"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Kuchnia</span>
+                            <h4>Nowoczesna kuchnia w bieli</h4>
+                            <p>Trzebnica, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="szafy">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="10" y="10" width="80" height="80" rx="2"/>
+                                <line x1="50" y1="10" x2="50" y2="90"/>
+                                <circle cx="35" cy="50" r="3"/>
+                                <circle cx="65" cy="50" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Szafa</span>
+                            <h4>Szafa wnękowa z lustrem</h4>
+                            <p>Wrocław, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="garderoby">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="10" y="10" width="80" height="80" rx="2"/>
+                                <line x1="10" y1="35" x2="90" y2="35"/>
+                                <line x1="10" y1="60" x2="90" y2="60"/>
+                                <line x1="35" y1="10" x2="35" y2="90"/>
+                                <line x1="65" y1="10" x2="65" y2="90"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Garderoba</span>
+                            <h4>Garderoba walk-in</h4>
+                            <p>Oborniki Śląskie, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="lazienki">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="15" y="40" width="70" height="40" rx="2"/>
+                                <ellipse cx="50" cy="25" rx="25" ry="12"/>
+                                <rect x="20" y="45" width="25" height="30" rx="1"/>
+                                <rect x="55" y="45" width="25" height="30" rx="1"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Łazienka</span>
+                            <h4>Minimalistyczna łazienka</h4>
+                            <p>Trzebnica, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="kuchnie">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="10" y="25" width="80" height="55" rx="2"/>
+                                <rect x="15" y="30" width="35" height="25" rx="1"/>
+                                <rect x="55" y="30" width="30" height="45" rx="1"/>
+                                <line x1="15" y1="60" x2="50" y2="60"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Kuchnia</span>
+                            <h4>Kuchnia w kolorze antracyt</h4>
+                            <p>Żmigród, 2024</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="garderoby">
+                    <div class="gallery-image">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
+                                <rect x="5" y="10" width="90" height="80" rx="2"/>
+                                <line x1="5" y1="30" x2="95" y2="30"/>
+                                <line x1="5" y1="50" x2="95" y2="50"/>
+                                <line x1="5" y1="70" x2="95" y2="70"/>
+                                <line x1="30" y1="10" x2="30" y2="90"/>
+                                <line x1="50" y1="10" x2="50" y2="90"/>
+                                <line x1="75" y1="10" x2="75" y2="90"/>
+                            </svg>
+                        </div>
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">Garderoba</span>
+                            <h4>Luksusowa garderoba</h4>
+                            <p>Wrocław, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="opinie">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Opinie klientów</span>
+                <h2 class="section-title">Co mówią <span class="text-gold">nasi klienci</span></h2>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Kuchnia naszych marzeń! Od pierwszego spotkania czuliśmy się zaopiekowani.
+                            Projekt 3D pozwolił nam zobaczyć efekt końcowy jeszcze przed realizacją.
+                            Montaż przebiegł sprawnie, a jakość wykonania jest perfekcyjna."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div>
+                                <strong>Anna i Krzysztof</strong>
+                                <span>Trzebnica</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Szafa wnękowa idealnie wykorzystała przestrzeń w naszej sypialni.
+                            Pan z Lux-Meble doradził nam najlepsze rozwiązania. Jestem pod wrażeniem
+                            profesjonalizmu i dbałości o szczegóły. Polecam z całego serca!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MN</div>
+                            <div>
+                                <strong>Marta Nowicka</strong>
+                                <span>Wrocław</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <p class="testimonial-text">
+                            "Już trzeci raz korzystamy z usług Lux-Meble. Najpierw kuchnia, potem szafy,
+                            a teraz garderoba. Zawsze terminowo, zawsze perfekcyjnie.
+                            Nie wyobrażam sobie współpracy z kimś innym!"
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PW</div>
+                            <div>
+                                <strong>Piotr Wiśniewski</strong>
+                                <span>Oborniki Śląskie</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonials-nav">
+                <button class="testimonial-nav-btn prev" aria-label="Poprzednia opinia">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <div class="testimonials-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                </div>
+                <button class="testimonial-nav-btn next" aria-label="Następna opinia">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-background"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Gotowy na meble <span class="text-gold">Twoich marzeń?</span></h2>
+                <p>
+                    Umów się na bezpłatną konsultację i pomiar. Razem stworzymy
+                    przestrzeń idealnie dopasowaną do Twoich potrzeb.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#kontakt" class="btn btn-primary btn-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                        </svg>
+                        <span>Zadzwoń teraz</span>
+                    </a>
+                    <a href="#kontakt" class="btn btn-outline btn-large">Napisz do nas</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontakt">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-tag">Kontakt</span>
+                    <h2 class="section-title">Porozmawiajmy o <span class="text-gold">Twoim projekcie</span></h2>
+                    <p class="contact-text">
+                        Masz pytania? Chcesz umówić się na bezpłatny pomiar?
+                        Skontaktuj się z nami - odpowiemy najszybciej jak to możliwe.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Adres</strong>
+                                <p>ul. Przykładowa 10<br>55-100 Trzebnica</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Telefon</strong>
+                                <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Email</strong>
+                                <p><a href="mailto:kontakt@luxmeble.pl">kontakt@luxmeble.pl</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <strong>Godziny pracy</strong>
+                                <p>Pon-Pt: 8:00 - 17:00<br>Sob: 9:00 - 14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Imię i nazwisko</label>
+                            <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="jan@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interesuje mnie</label>
+                            <select id="service" name="service">
+                                <option value="">Wybierz usługę...</option>
+                                <option value="kuchnia">Kuchnia na wymiar</option>
+                                <option value="szafa">Szafa wnękowa</option>
+                                <option value="garderoba">Garderoba</option>
+                                <option value="lazienka">Meble łazienkowe</option>
+                                <option value="inne">Inne</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Wiadomość</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Opisz swój projekt lub zadaj pytanie..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span>Wyślij wiadomość</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"/>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+                    </a>
+                    <p>
+                        Ekskluzywne meble na wymiar z Trzebnicy.
+                        10 lat doświadczenia w tworzeniu wyjątkowych wnętrz.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#home">Start</a></li>
+                        <li><a href="#uslugi">Usługi</a></li>
+                        <li><a href="#o-nas">O nas</a></li>
+                        <li><a href="#realizacje">Realizacje</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Usługi</h4>
+                    <ul>
+                        <li><a href="#uslugi">Kuchnie na wymiar</a></li>
+                        <li><a href="#uslugi">Szafy wnękowe</a></li>
+                        <li><a href="#uslugi">Garderoby</a></li>
+                        <li><a href="#uslugi">Meble łazienkowe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <p>ul. Przykładowa 10<br>55-100 Trzebnica</p>
+                    <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+                    <p><a href="mailto:kontakt@luxmeble.pl">kontakt@luxmeble.pl</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lux-Meble. Wszystkie prawa zastrzeżone.</p>
+                <p>Strona wykonana z pasją do perfekcji.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
