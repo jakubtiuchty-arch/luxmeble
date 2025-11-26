@@ -716,8 +716,9 @@ section {
 
 .about-experience-badge {
     position: absolute;
-    top: 30px;
-    right: 100px;
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
     background: var(--color-accent);
     color: var(--color-text-light);
     padding: 25px;
