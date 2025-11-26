@@ -664,8 +664,8 @@ section {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
-    max-width: 450px;
-    max-height: 350px;
+    max-width: 495px;
+    max-height: 385px;
 }
 
 .about-image-main img {
@@ -673,7 +673,7 @@ section {
     height: 100%;
     object-fit: cover;
     display: block;
-    max-height: 350px;
+    max-height: 385px;
 }
 
 .about-image-secondary {
