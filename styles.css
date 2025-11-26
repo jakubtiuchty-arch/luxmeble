@@ -610,7 +610,6 @@ section {
     color: var(--color-text-secondary);
     font-size: 0.95rem;
     margin-bottom: 20px;
-    text-align: justify;
 }
 
 .service-features {
