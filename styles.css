@@ -1652,20 +1652,11 @@ section {
     }
 
     .about-experience-badge {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        left: auto;
-        bottom: auto;
-        padding: 12px 16px;
+        display: none;
     }
 
-    .about-experience-badge .experience-number {
-        font-size: 1.8rem;
-    }
-
-    .about-experience-badge .experience-text {
-        font-size: 0.65rem;
+    .about-images {
+        display: none;
     }
 
     .about-features {
