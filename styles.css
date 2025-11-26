@@ -133,10 +133,10 @@ a {
 }
 
 .logo {
-    font-family: var(--font-heading);
+    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 600;
+    letter-spacing: 3px;
     display: flex;
     align-items: center;
 }
@@ -146,14 +146,15 @@ a {
     font-weight: 700;
 }
 
-.logo-meble {
-    color: var(--color-text-primary);
+.logo-separator {
+    color: var(--color-accent);
     font-weight: 300;
+    margin: 0 2px;
 }
 
-.logo-img {
-    height: 72px;
-    width: auto;
+.logo-meble {
+    color: var(--color-text-primary);
+    font-weight: 400;
 }
 
 .nav-menu {
