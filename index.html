@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lux-Meble Trzebnica - Ekskluzywne meble na wymiar. Kuchnie, szafy, garderoby, meble łazienkowe. 10 lat doświadczenia.">
-    <title>Lux-Meble Trzebnica | Ekskluzywne Meble Na Wymiar</title>
+    <meta name="description" content="qba.dev - Profesjonalne landing page w 7 dni. Strony, które sprzedają. Senior Frontend Developer z 8+ lat doświadczenia.">
+    <meta name="keywords" content="landing page, strony internetowe, frontend developer, web developer, strony www">
+    <title>qba.dev | Landing Page w 7 dni | Senior Frontend Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Cursor glow effect -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">
-                <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+                <span class="logo-bracket">&lt;</span>qba<span class="logo-dot">.</span>dev<span class="logo-bracket">/&gt;</span>
             </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="nav-link">Start</a></li>
                 <li><a href="#uslugi" class="nav-link">Usługi</a></li>
-                <li><a href="#o-nas" class="nav-link">O nas</a></li>
-                <li><a href="#realizacje" class="nav-link">Realizacje</a></li>
-                <li><a href="#opinie" class="nav-link">Opinie</a></li>
-                <li><a href="#kontakt" class="nav-link nav-cta">Kontakt</a></li>
+                <li><a href="#proces" class="nav-link">Proces</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#cennik" class="nav-link">Cennik</a></li>
+                <li><a href="#kontakt" class="nav-link nav-cta">Zamów teraz</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -35,51 +39,159 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="hero-particles" id="particles"></div>
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+            <div class="hero-gradient"></div>
+            <div class="hero-glow hero-glow-1"></div>
+            <div class="hero-glow hero-glow-2"></div>
+        </div>
+
         <div class="hero-content">
             <div class="hero-badge">
-                <span class="badge-icon">★</span>
-                <span>10 lat doświadczenia</span>
+                <span class="badge-dot"></span>
+                <span>Dostępny dla nowych projektów</span>
             </div>
+
             <h1 class="hero-title">
-                <span class="title-line">Tworzymy</span>
-                <span class="title-line title-accent">Wyjątkowe</span>
-                <span class="title-line">Wnętrza</span>
+                <span class="title-line">Landing Page</span>
+                <span class="title-line title-gradient">w 7 dni</span>
+                <span class="title-line title-small">który <span class="text-highlight">sprzedaje</span></span>
             </h1>
+
             <p class="hero-subtitle">
-                Ekskluzywne meble na wymiar z Trzebnicy. Kuchnie, szafy, garderoby
-                i meble łazienkowe zaprojektowane specjalnie dla Ciebie.
+                Nie kolejna strona, która wygląda jak tysiące innych.<br>
+                <strong>Twój landing page, który konwertuje odwiedzających w klientów.</strong>
             </p>
-            <div class="hero-buttons">
-                <a href="#kontakt" class="btn btn-primary">
-                    <span>Bezpłatna wycena</span>
-                    <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+            <div class="hero-cta">
+                <a href="#kontakt" class="btn btn-primary btn-glow">
+                    <span>Zamów bezpłatną wycenę</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <a href="#realizacje" class="btn btn-secondary">Zobacz realizacje</a>
+                <a href="tel:+48123456789" class="btn btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                    </svg>
+                    <span>Zadzwoń teraz</span>
+                </a>
             </div>
+
             <div class="hero-stats">
                 <div class="stat">
-                    <span class="stat-number" data-target="10">0</span>
-                    <span class="stat-label">Lat na rynku</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-number" data-target="8">0</span>
                     <span class="stat-suffix">+</span>
-                    <span class="stat-label">Realizacji</span>
+                    <span class="stat-label">lat doświadczenia</span>
                 </div>
+                <div class="stat-divider"></div>
                 <div class="stat">
-                    <span class="stat-number" data-target="100">0</span>
-                    <span class="stat-suffix">%</span>
-                    <span class="stat-label">Zadowolonych klientów</span>
+                    <span class="stat-number" data-target="50">0</span>
+                    <span class="stat-suffix">+</span>
+                    <span class="stat-label">zrealizowanych projektów</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-target="7">0</span>
+                    <span class="stat-label">dni do realizacji</span>
                 </div>
             </div>
         </div>
-        <div class="scroll-indicator">
+
+        <div class="hero-scroll">
             <span>Przewiń w dół</span>
-            <div class="scroll-arrow"></div>
+            <div class="scroll-line"></div>
+        </div>
+
+        <!-- Floating code snippets -->
+        <div class="floating-code floating-code-1">
+            <pre><code>&lt;div class="success"&gt;
+  Twój biznes rośnie
+&lt;/div&gt;</code></pre>
+        </div>
+        <div class="floating-code floating-code-2">
+            <pre><code>conversion_rate: 12.5%
+leads_generated: 847</code></pre>
+        </div>
+    </section>
+
+    <!-- Problem/Solution Section -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-content">
+                    <span class="section-tag">Problem</span>
+                    <h2 class="section-title">
+                        Twoja konkurencja ma stronę.<br>
+                        <span class="text-gradient">Ty też potrzebujesz.</span>
+                    </h2>
+                    <div class="problem-list">
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-bad">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M15 9l-6 6M9 9l6 6"/>
+                                </svg>
+                            </div>
+                            <p>Strony z szablonów wyglądają jak wszystkie inne</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-bad">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M15 9l-6 6M9 9l6 6"/>
+                                </svg>
+                            </div>
+                            <p>Agencje ciągną projekt tygodniami i kosztują fortunę</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-bad">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M15 9l-6 6M9 9l6 6"/>
+                                </svg>
+                            </div>
+                            <p>DIY builders = brak wsparcia i kiepska jakość</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution-content">
+                    <span class="section-tag section-tag-accent">Rozwiązanie</span>
+                    <h2 class="section-title">
+                        Landing page od <span class="text-gradient">eksperta</span>.<br>
+                        Szybko. Profesjonalnie.
+                    </h2>
+                    <div class="problem-list">
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-good">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <p>Unikalny design dopasowany do Twojej marki</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-good">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <p>Gotowe w 7 dni - bez przeciągania</p>
+                        </div>
+                        <div class="problem-item">
+                            <div class="problem-icon problem-icon-good">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                                    <polyline points="22 4 12 14.01 9 11.01"/>
+                                </svg>
+                            </div>
+                            <p>Senior developer z 8+ lat doświadczenia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -87,419 +199,460 @@
     <section class="services" id="uslugi">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Nasza oferta</span>
-                <h2 class="section-title">Meble <span class="text-gold">na wymiar</span></h2>
-                <p class="section-subtitle">
-                    Każdy projekt tworzymy indywidualnie, dostosowując go do Twoich potrzeb i przestrzeni
-                </p>
+                <span class="section-tag">Co dostajesz</span>
+                <h2 class="section-title">
+                    Nie tylko stronę.<br>
+                    <span class="text-gradient">Narzędzie do sprzedaży.</span>
+                </h2>
             </div>
+
             <div class="services-grid">
-                <div class="service-card" data-aos="fade-up">
+                <div class="service-card service-card-featured">
+                    <div class="service-number">01</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="8" y="20" width="48" height="36" rx="2"/>
-                            <rect x="12" y="24" width="18" height="14" rx="1"/>
-                            <rect x="34" y="24" width="18" height="14" rx="1"/>
-                            <line x1="8" y1="42" x2="56" y2="42"/>
-                            <circle cx="23" cy="50" r="2"/>
-                            <circle cx="41" cy="50" r="2"/>
-                            <path d="M20 8h24v12H20z"/>
-                            <line x1="28" y1="8" x2="28" y2="20"/>
-                            <line x1="36" y1="8" x2="36" y2="20"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <path d="M8 21h8M12 17v4"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Kuchnie</h3>
-                    <p class="service-desc">
-                        Funkcjonalne i eleganckie kuchnie na wymiar. Od nowoczesnych po klasyczne
-                        - projektujemy przestrzenie, w których gotowanie staje się przyjemnością.
-                    </p>
+                    <h3>Responsywny design</h3>
+                    <p>Strona wygląda perfekcyjnie na każdym urządzeniu - od telefonu po 4K monitor. Żadnych kompromisów.</p>
                     <ul class="service-features">
-                        <li>Indywidualne projekty</li>
-                        <li>Blaty kompozytowe i kamienne</li>
-                        <li>Systemy cargo i organizery</li>
-                        <li>Oświetlenie LED</li>
+                        <li>Mobile-first approach</li>
+                        <li>Testowane na 20+ urządzeniach</li>
+                        <li>Optymalizacja pod dotyk</li>
                     </ul>
-                    <a href="#kontakt" class="service-link">
-                        Zapytaj o wycenę
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card">
+                    <div class="service-number">02</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="10" y="8" width="44" height="52" rx="2"/>
-                            <line x1="32" y1="8" x2="32" y2="60"/>
-                            <line x1="10" y1="34" x2="54" y2="34"/>
-                            <circle cx="26" cy="21" r="2"/>
-                            <circle cx="38" cy="21" r="2"/>
-                            <circle cx="26" cy="47" r="2"/>
-                            <circle cx="38" cy="47" r="2"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Szafy</h3>
-                    <p class="service-desc">
-                        Szafy wnękowe i wolnostojące z drzwiami przesuwnymi lub rozwieranymi.
-                        Maksymalne wykorzystanie przestrzeni przy zachowaniu estetyki.
-                    </p>
+                    <h3>Błyskawiczna szybkość</h3>
+                    <p>Ładowanie poniżej 2 sekund. Google to kocha, użytkownicy też.</p>
                     <ul class="service-features">
-                        <li>Drzwi przesuwne i rozwierane</li>
-                        <li>Lustra i lacobel</li>
-                        <li>Systemy organizacji wnętrza</li>
-                        <li>Oświetlenie sensorowe</li>
+                        <li>Optymalizacja Core Web Vitals</li>
+                        <li>Lazy loading obrazów</li>
+                        <li>Minifikacja kodu</li>
                     </ul>
-                    <a href="#kontakt" class="service-link">
-                        Zapytaj o wycenę
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card">
+                    <div class="service-number">03</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="8" y="12" width="48" height="44" rx="2"/>
-                            <line x1="8" y1="28" x2="56" y2="28"/>
-                            <line x1="8" y1="44" x2="56" y2="44"/>
-                            <line x1="20" y1="12" x2="20" y2="56"/>
-                            <line x1="44" y1="12" x2="44" y2="56"/>
-                            <rect x="24" y="32" width="16" height="8" rx="1"/>
-                            <circle cx="14" cy="36" r="1.5"/>
-                            <circle cx="50" cy="36" r="1.5"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                            <path d="M11 8v6M8 11h6"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Garderoby</h3>
-                    <p class="service-desc">
-                        Kompleksowe garderoby walk-in oraz garderoby wnękowe. Miejsce na wszystko,
-                        idealnie zorganizowane i dostosowane do Twojego stylu życia.
-                    </p>
+                    <h3>SEO na start</h3>
+                    <p>Meta tagi, schema markup, szybkość - wszystko gotowe, żeby Google Cię znalazł.</p>
                     <ul class="service-features">
-                        <li>Garderoby walk-in</li>
-                        <li>Wysuwane kosze i półki</li>
-                        <li>Wieszaki na akcesoria</li>
-                        <li>Lustra z oświetleniem</li>
+                        <li>Optymalizacja meta tagów</li>
+                        <li>Structured data</li>
+                        <li>Sitemap & robots.txt</li>
                     </ul>
-                    <a href="#kontakt" class="service-link">
-                        Zapytaj o wycenę
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
 
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card">
+                    <div class="service-number">04</div>
                     <div class="service-icon">
-                        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="12" y="28" width="40" height="24" rx="2"/>
-                            <rect x="16" y="32" width="14" height="16" rx="1"/>
-                            <rect x="34" y="32" width="14" height="16" rx="1"/>
-                            <circle cx="23" cy="40" r="2"/>
-                            <circle cx="41" cy="40" r="2"/>
-                            <ellipse cx="32" cy="16" rx="16" ry="8"/>
-                            <path d="M16 16v12M48 16v12"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 20V10M18 20V4M6 20v-4"/>
                         </svg>
                     </div>
-                    <h3 class="service-title">Łazienki</h3>
-                    <p class="service-desc">
-                        Meble łazienkowe odporne na wilgoć i temperaturę. Szafki pod umywalkę,
-                        słupki, półki - wszystko dopasowane do Twojej łazienki.
-                    </p>
+                    <h3>Analityka</h3>
+                    <p>Google Analytics 4 skonfigurowane. Wiesz dokładnie skąd przychodzą klienci.</p>
                     <ul class="service-features">
-                        <li>Materiały wodoodporne</li>
-                        <li>Szafki pod umywalkę</li>
-                        <li>Słupki i półki</li>
-                        <li>Blaty z odpływem liniowym</li>
+                        <li>GA4 + GTM setup</li>
+                        <li>Śledzenie konwersji</li>
+                        <li>Heatmapy (opcja)</li>
                     </ul>
-                    <a href="#kontakt" class="service-link">
-                        Zapytaj o wycenę
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="o-nas">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-images">
-                    <div class="about-image-main">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="10" y="30" width="100" height="60" rx="2"/>
-                                <rect x="15" y="35" width="40" height="25" rx="1"/>
-                                <rect x="60" y="35" width="45" height="50" rx="1"/>
-                                <line x1="15" y1="70" x2="55" y2="70"/>
-                                <line x1="15" y1="80" x2="55" y2="80"/>
-                            </svg>
-                            <span>Precyzja wykonania</span>
-                        </div>
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="11" width="18" height="11" rx="2"/>
+                            <path d="M7 11V7a5 5 0 0110 0v4"/>
+                        </svg>
                     </div>
-                    <div class="about-image-secondary">
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <circle cx="40" cy="40" r="35"/>
-                                <path d="M25 40h30M40 25v30"/>
-                                <circle cx="40" cy="40" r="15"/>
-                            </svg>
-                            <span>Indywidualne podejście</span>
-                        </div>
-                    </div>
-                    <div class="about-experience-badge">
-                        <span class="experience-number">10</span>
-                        <span class="experience-text">lat<br>doświadczenia</span>
-                    </div>
+                    <h3>SSL & bezpieczeństwo</h3>
+                    <p>Certyfikat SSL, bezpieczne formularze, ochrona przed spamem.</p>
+                    <ul class="service-features">
+                        <li>HTTPS everywhere</li>
+                        <li>Zabezpieczenie formularzy</li>
+                        <li>Regularne backupy</li>
+                    </ul>
                 </div>
-                <div class="about-content">
-                    <span class="section-tag">O nas</span>
-                    <h2 class="section-title">Pasja do <span class="text-gold">perfekcji</span></h2>
-                    <p class="about-text">
-                        <strong>Lux-Meble</strong> to trzebnicka firma z 10-letnim doświadczeniem
-                        w tworzeniu ekskluzywnych mebli na wymiar. Łączymy tradycyjne rzemiosło
-                        z nowoczesnymi technologiami, aby dostarczać meble najwyższej jakości.
-                    </p>
-                    <p class="about-text">
-                        Każdy projekt traktujemy indywidualnie. Od pierwszego pomiaru, przez
-                        projektowanie, aż po precyzyjny montaż - dbamy o każdy szczegół.
-                        Nasza praca to nie tylko meble - to funkcjonalne dzieła sztuki.
-                    </p>
-                    <div class="about-features">
-                        <div class="about-feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                    <path d="M2 17l10 5 10-5"/>
-                                    <path d="M2 12l10 5 10-5"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Indywidualne projekty</h4>
-                                <p>Meble dopasowane do Ciebie</p>
-                            </div>
-                        </div>
-                        <div class="about-feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                                    <polyline points="22 4 12 14.01 9 11.01"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Gwarancja jakości</h4>
-                                <p>Najlepsze materiały i okucia</p>
-                            </div>
-                        </div>
-                        <div class="about-feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Terminowość</h4>
-                                <p>Dotrzymujemy ustalonych terminów</p>
-                            </div>
-                        </div>
-                        <div class="about-feature">
-                            <div class="feature-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                                    <circle cx="9" cy="7" r="4"/>
-                                    <path d="M23 21v-2a4 4 0 00-3-3.87"/>
-                                    <path d="M16 3.13a4 4 0 010 7.75"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Kompleksowa obsługa</h4>
-                                <p>Od pomysłu do montażu</p>
-                            </div>
-                        </div>
+
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+                        </svg>
                     </div>
+                    <h3>30 dni wsparcia</h3>
+                    <p>Po uruchomieniu nie zostaję Cię samego. Poprawki i pytania - jestem dostępny.</p>
+                    <ul class="service-features">
+                        <li>Szybki kontakt</li>
+                        <li>Drobne poprawki gratis</li>
+                        <li>Szkolenie z obsługi</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section class="process">
+    <section class="process" id="proces">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Jak pracujemy</span>
-                <h2 class="section-title">Proces <span class="text-gold">realizacji</span></h2>
+                <span class="section-tag">Jak to działa</span>
+                <h2 class="section-title">
+                    Od pomysłu do strony<br>
+                    <span class="text-gradient">w 4 prostych krokach</span>
+                </h2>
             </div>
+
             <div class="process-timeline">
+                <div class="process-line"></div>
+
                 <div class="process-step">
-                    <div class="step-number">01</div>
+                    <div class="step-marker">
+                        <span>1</span>
+                    </div>
                     <div class="step-content">
-                        <h3>Konsultacja</h3>
-                        <p>Bezpłatne spotkanie i omówienie Twoich potrzeb oraz możliwości</p>
+                        <div class="step-day">Dzień 1</div>
+                        <h3>Rozmowa & brief</h3>
+                        <p>30-minutowa rozmowa o Twoim biznesie, celach i oczekiwaniach. Wysyłasz materiały (logo, teksty, zdjęcia).</p>
                     </div>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">02</div>
+                    <div class="step-marker">
+                        <span>2</span>
+                    </div>
                     <div class="step-content">
-                        <h3>Pomiar</h3>
-                        <p>Precyzyjny pomiar w Twoim domu - bezpłatnie i bez zobowiązań</p>
+                        <div class="step-day">Dzień 2-3</div>
+                        <h3>Projekt & feedback</h3>
+                        <p>Otrzymujesz projekt strony do akceptacji. Wprowadzamy Twoje uwagi - maksymalnie 2 rundy poprawek.</p>
                     </div>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">03</div>
+                    <div class="step-marker">
+                        <span>3</span>
+                    </div>
                     <div class="step-content">
-                        <h3>Wycena</h3>
-                        <p>Szczegółowa wycena bez ukrytych kosztów</p>
+                        <div class="step-day">Dzień 4-6</div>
+                        <h3>Kodowanie</h3>
+                        <p>Zamieniamy projekt w działającą stronę. Responsywność, animacje, formularze - wszystko działa.</p>
                     </div>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">04</div>
-                    <div class="step-content">
-                        <h3>Produkcja</h3>
-                        <p>Wykonanie mebli z najwyższą starannością i precyzją</p>
+                    <div class="step-marker">
+                        <span>4</span>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">05</div>
                     <div class="step-content">
-                        <h3>Montaż</h3>
-                        <p>Profesjonalny montaż przez nasz doświadczony zespół</p>
+                        <div class="step-day">Dzień 7</div>
+                        <h3>Launch!</h3>
+                        <p>Strona ląduje na Twoim hostingu. Analityka skonfigurowana. Zaczynasz zbierać leady.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section class="gallery" id="realizacje">
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Portfolio</span>
-                <h2 class="section-title">Nasze <span class="text-gold">realizacje</span></h2>
-                <p class="section-subtitle">
-                    Każdy projekt to unikalna historia. Zobacz wybrane realizacje z ostatnich lat.
-                </p>
+                <h2 class="section-title">
+                    Strony, które<br>
+                    <span class="text-gradient">robią robotę</span>
+                </h2>
             </div>
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">Wszystkie</button>
-                <button class="filter-btn" data-filter="kuchnie">Kuchnie</button>
-                <button class="filter-btn" data-filter="szafy">Szafy</button>
-                <button class="filter-btn" data-filter="garderoby">Garderoby</button>
-                <button class="filter-btn" data-filter="lazienki">Łazienki</button>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item portfolio-item-large">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-browser">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="placeholder-content">
+                                    <div class="placeholder-nav"></div>
+                                    <div class="placeholder-hero">
+                                        <div class="placeholder-text"></div>
+                                        <div class="placeholder-text short"></div>
+                                        <div class="placeholder-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">E-commerce</span>
+                        <h3>Sklep z elektroniką</h3>
+                        <p>Landing page dla nowej linii produktów. +340% konwersji vs stara strona.</p>
+                        <div class="portfolio-stats">
+                            <div class="portfolio-stat">
+                                <span class="portfolio-stat-value">+340%</span>
+                                <span class="portfolio-stat-label">konwersji</span>
+                            </div>
+                            <div class="portfolio-stat">
+                                <span class="portfolio-stat-value">1.2s</span>
+                                <span class="portfolio-stat-label">load time</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-browser">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="placeholder-content dark">
+                                    <div class="placeholder-nav"></div>
+                                    <div class="placeholder-hero">
+                                        <div class="placeholder-text"></div>
+                                        <div class="placeholder-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">SaaS</span>
+                        <h3>Startup technologiczny</h3>
+                        <p>Strona produktowa dla aplikacji B2B.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-browser">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="placeholder-content light">
+                                    <div class="placeholder-nav"></div>
+                                    <div class="placeholder-hero">
+                                        <div class="placeholder-text"></div>
+                                        <div class="placeholder-text short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Usługi</span>
+                        <h3>Kancelaria prawna</h3>
+                        <p>Profesjonalny landing dla kancelarii.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-browser">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="placeholder-content gradient">
+                                    <div class="placeholder-nav"></div>
+                                    <div class="placeholder-hero">
+                                        <div class="placeholder-text"></div>
+                                        <div class="placeholder-btn"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Fitness</span>
+                        <h3>Trener personalny</h3>
+                        <p>Strona z kalendarzem rezerwacji.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <div class="placeholder-browser">
+                                <div class="browser-dots">
+                                    <span></span><span></span><span></span>
+                                </div>
+                                <div class="placeholder-content">
+                                    <div class="placeholder-nav"></div>
+                                    <div class="placeholder-hero">
+                                        <div class="placeholder-text"></div>
+                                        <div class="placeholder-text short"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Real Estate</span>
+                        <h3>Agencja nieruchomości</h3>
+                        <p>Landing dla inwestycji deweloperskiej.</p>
+                    </div>
+                </div>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="kuchnie">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="10" y="30" width="80" height="50" rx="2"/>
-                                <rect x="15" y="35" width="30" height="20" rx="1"/>
-                                <rect x="50" y="35" width="35" height="40" rx="1"/>
-                                <line x1="15" y1="65" x2="45" y2="65"/>
-                                <line x1="15" y1="75" x2="45" y2="75"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Kuchnia</span>
-                            <h4>Nowoczesna kuchnia w bieli</h4>
-                            <p>Trzebnica, 2024</p>
-                        </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="cennik">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Cennik</span>
+                <h2 class="section-title">
+                    Przejrzyste ceny.<br>
+                    <span class="text-gradient">Bez niespodzianek.</span>
+                </h2>
+                <p class="section-subtitle">Wybierz pakiet dopasowany do Twoich potrzeb</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>Dla małych firm i freelancerów</p>
                     </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">PLN</span>
+                        <span class="price-amount">2,500</span>
+                        <span class="price-period">jednorazowo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Landing page (1 strona)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Responsywny design</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Formularz kontaktowy</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Podstawowe SEO</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>14 dni wsparcia</span>
+                        </li>
+                        <li class="feature-disabled">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <span>Animacje premium</span>
+                        </li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-secondary btn-full">Wybieram Starter</a>
                 </div>
-                <div class="gallery-item large" data-category="szafy">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="10" y="10" width="80" height="80" rx="2"/>
-                                <line x1="50" y1="10" x2="50" y2="90"/>
-                                <circle cx="35" cy="50" r="3"/>
-                                <circle cx="65" cy="50" r="3"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Szafa</span>
-                            <h4>Szafa wnękowa z lustrem</h4>
-                            <p>Wrocław, 2024</p>
-                        </div>
+
+                <div class="pricing-card pricing-card-featured">
+                    <div class="pricing-badge">Najpopularniejszy</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <p>Dla firm, które chcą więcej</p>
                     </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">PLN</span>
+                        <span class="price-amount">4,500</span>
+                        <span class="price-period">jednorazowo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Landing page (do 3 sekcji extra)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Responsywny design</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Zaawansowany formularz</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Pełne SEO + analityka</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Animacje premium</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>30 dni wsparcia</span>
+                        </li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-primary btn-glow btn-full">Wybieram Pro</a>
                 </div>
-                <div class="gallery-item" data-category="garderoby">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="10" y="10" width="80" height="80" rx="2"/>
-                                <line x1="10" y1="35" x2="90" y2="35"/>
-                                <line x1="10" y1="60" x2="90" y2="60"/>
-                                <line x1="35" y1="10" x2="35" y2="90"/>
-                                <line x1="65" y1="10" x2="65" y2="90"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Garderoba</span>
-                            <h4>Garderoba walk-in</h4>
-                            <p>Oborniki Śląskie, 2024</p>
-                        </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Premium</h3>
+                        <p>Pełen pakiet dla wymagających</p>
                     </div>
-                </div>
-                <div class="gallery-item" data-category="lazienki">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="15" y="40" width="70" height="40" rx="2"/>
-                                <ellipse cx="50" cy="25" rx="25" ry="12"/>
-                                <rect x="20" y="45" width="25" height="30" rx="1"/>
-                                <rect x="55" y="45" width="25" height="30" rx="1"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Łazienka</span>
-                            <h4>Minimalistyczna łazienka</h4>
-                            <p>Trzebnica, 2023</p>
-                        </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">PLN</span>
+                        <span class="price-amount">7,500</span>
+                        <span class="price-period">jednorazowo</span>
                     </div>
-                </div>
-                <div class="gallery-item" data-category="kuchnie">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="10" y="25" width="80" height="55" rx="2"/>
-                                <rect x="15" y="30" width="35" height="25" rx="1"/>
-                                <rect x="55" y="30" width="30" height="45" rx="1"/>
-                                <line x1="15" y1="60" x2="50" y2="60"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Kuchnia</span>
-                            <h4>Kuchnia w kolorze antracyt</h4>
-                            <p>Żmigród, 2024</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="gallery-item large" data-category="garderoby">
-                    <div class="gallery-image">
-                        <div class="gallery-placeholder">
-                            <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.5">
-                                <rect x="5" y="10" width="90" height="80" rx="2"/>
-                                <line x1="5" y1="30" x2="95" y2="30"/>
-                                <line x1="5" y1="50" x2="95" y2="50"/>
-                                <line x1="5" y1="70" x2="95" y2="70"/>
-                                <line x1="30" y1="10" x2="30" y2="90"/>
-                                <line x1="50" y1="10" x2="50" y2="90"/>
-                                <line x1="75" y1="10" x2="75" y2="90"/>
-                            </svg>
-                        </div>
-                        <div class="gallery-overlay">
-                            <span class="gallery-category">Garderoba</span>
-                            <h4>Luksusowa garderoba</h4>
-                            <p>Wrocław, 2024</p>
-                        </div>
-                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Multi-page website (do 5 stron)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Custom design od podstaw</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>CMS (edycja treści)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Integracje (CRM, mailing)</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Zaawansowane animacje</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>60 dni wsparcia</span>
+                        </li>
+                    </ul>
+                    <a href="#kontakt" class="btn btn-secondary btn-full">Wybieram Premium</a>
                 </div>
             </div>
+
+            <p class="pricing-note">
+                * Ceny nie zawierają kosztów hostingu i domeny. Potrzebujesz czegoś innego?
+                <a href="#kontakt">Napisz do mnie</a> - wycenię indywidualnie.
+            </p>
         </div>
     </section>
 
@@ -507,106 +660,90 @@
     <section class="testimonials" id="opinie">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Opinie klientów</span>
-                <h2 class="section-title">Co mówią <span class="text-gold">nasi klienci</span></h2>
+                <span class="section-tag">Opinie</span>
+                <h2 class="section-title">
+                    Co mówią<br>
+                    <span class="text-gradient">moi klienci</span>
+                </h2>
             </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card active">
-                    <div class="testimonial-content">
-                        <div class="testimonial-stars">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                        </div>
-                        <p class="testimonial-text">
-                            "Kuchnia naszych marzeń! Od pierwszego spotkania czuliśmy się zaopiekowani.
-                            Panowie doradzili nam najlepsze rozwiązania dopasowane do naszego budżetu.
-                            Montaż przebiegł sprawnie, a jakość wykonania jest perfekcyjna."
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AK</div>
-                            <div>
-                                <strong>Anna i Krzysztof</strong>
-                                <span>Trzebnica</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+            <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <div class="testimonial-stars">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                         </div>
-                        <p class="testimonial-text">
-                            "Szafa wnękowa idealnie wykorzystała przestrzeń w naszej sypialni.
-                            Pan z Lux-Meble doradził nam najlepsze rozwiązania. Jestem pod wrażeniem
-                            profesjonalizmu i dbałości o szczegóły. Polecam z całego serca!"
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MN</div>
-                            <div>
-                                <strong>Marta Nowicka</strong>
-                                <span>Wrocław</span>
-                            </div>
+                        <p>"Strona gotowa w tydzień, dokładnie jak obiecał. Zero stresu, zero przeciągania. Konwersja skoczyła o 200% w pierwszy miesiąc."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MK</div>
+                        <div class="author-info">
+                            <strong>Marek Kowalski</strong>
+                            <span>CEO, TechStartup.pl</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="testimonial-content">
                         <div class="testimonial-stars">
-                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
                         </div>
-                        <p class="testimonial-text">
-                            "Już trzeci raz korzystamy z usług Lux-Meble. Najpierw kuchnia, potem szafy,
-                            a teraz garderoba. Zawsze terminowo, zawsze perfekcyjnie.
-                            Nie wyobrażam sobie współpracy z kimś innym!"
-                        </p>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">PW</div>
-                            <div>
-                                <strong>Piotr Wiśniewski</strong>
-                                <span>Oborniki Śląskie</span>
-                            </div>
+                        <p>"W końcu ktoś, kto rozumie, że strona ma sprzedawać, a nie tylko ładnie wyglądać. Polecam każdemu, kto szuka profesjonalisty."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AN</div>
+                        <div class="author-info">
+                            <strong>Anna Nowak</strong>
+                            <span>Właścicielka, Studio Urody</span>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="testimonials-nav">
-                <button class="testimonial-nav-btn prev" aria-label="Poprzednia opinia">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
-                </button>
-                <div class="testimonials-dots">
-                    <button class="dot active" data-index="0"></button>
-                    <button class="dot" data-index="1"></button>
-                    <button class="dot" data-index="2"></button>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-stars">
+                            <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                        </div>
+                        <p>"Trzecia strona, którą mi robił. Zawsze na czas, zawsze z głową. Gdy potrzebuję czegoś w necie - dzwonię tylko do niego."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PW</div>
+                        <div class="author-info">
+                            <strong>Piotr Wiśniewski</strong>
+                            <span>Przedsiębiorca</span>
+                        </div>
+                    </div>
                 </div>
-                <button class="testimonial-nav-btn next" aria-label="Następna opinia">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="cta-background"></div>
+    <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Gotowy na meble <span class="text-gold">Twoich marzeń?</span></h2>
-                <p>
-                    Umów się na bezpłatną konsultację i pomiar. Razem stworzymy
-                    przestrzeń idealnie dopasowaną do Twoich potrzeb.
-                </p>
-                <div class="cta-buttons">
-                    <a href="#kontakt" class="btn btn-primary btn-large">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-                        </svg>
-                        <span>Zadzwoń teraz</span>
-                    </a>
-                    <a href="#kontakt" class="btn btn-outline btn-large">Napisz do nas</a>
+            <div class="cta-box">
+                <div class="cta-content">
+                    <h2>Gotowy na stronę, która <span class="text-gradient">zarabia?</span></h2>
+                    <p>Zostaw kontakt - oddzwonię w ciągu 24h i porozmawiamy o Twoim projekcie.</p>
+                    <div class="cta-buttons">
+                        <a href="#kontakt" class="btn btn-primary btn-glow btn-large">
+                            <span>Bezpłatna wycena</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                        <a href="tel:+48123456789" class="btn btn-outline btn-large">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            <span>+48 123 456 789</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-decoration">
+                    <div class="cta-circle"></div>
+                    <div class="cta-circle"></div>
                 </div>
             </div>
         </div>
@@ -618,98 +755,90 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <span class="section-tag">Kontakt</span>
-                    <h2 class="section-title">Porozmawiajmy o <span class="text-gold">Twoim projekcie</span></h2>
+                    <h2 class="section-title">
+                        Porozmawiajmy o<br>
+                        <span class="text-gradient">Twoim projekcie</span>
+                    </h2>
                     <p class="contact-text">
-                        Masz pytania? Chcesz umówić się na bezpłatny pomiar?
-                        Skontaktuj się z nami - odpowiemy najszybciej jak to możliwe.
+                        Wypełnij formularz lub zadzwoń. Odpowiadam w ciągu 24 godzin (zwykle szybciej).
                     </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                                    <circle cx="12" cy="10" r="3"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Adres</strong>
-                                <p>ul. Bartosza Głowackiego 9<br>55-100 Trzebnica</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
+
+                    <div class="contact-methods">
+                        <a href="tel:+48123456789" class="contact-method">
+                            <div class="contact-method-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
                                 </svg>
                             </div>
                             <div>
                                 <strong>Telefon</strong>
-                                <p><a href="tel:+48713109727">71 310 97 27</a></p>
+                                <span>+48 123 456 789</span>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
+                        </a>
+
+                        <a href="mailto:hello@qba.dev" class="contact-method">
+                            <div class="contact-method-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                             </div>
                             <div>
-                                <strong>Facebook</strong>
-                                <p><a href="https://www.facebook.com/luxmebleTrzebnica/" target="_blank">Lux-Meble Trzebnica</a></p>
+                                <strong>Email</strong>
+                                <span>hello@qba.dev</span>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <polyline points="12 6 12 12 16 14"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <strong>Godziny pracy</strong>
-                                <p>Pon-Pt: 8:00 - 17:00<br>Sob: 9:00 - 14:00</p>
-                            </div>
-                        </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-availability">
+                        <div class="availability-dot"></div>
+                        <span>Dostępny dla nowych projektów</span>
                     </div>
                 </div>
+
                 <div class="contact-form-wrapper">
                     <form class="contact-form" id="contact-form">
                         <div class="form-group">
-                            <label for="name">Imię i nazwisko</label>
+                            <label for="name">Imię i nazwisko *</label>
                             <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
                         </div>
+
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required placeholder="jan@example.com">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="jan@firma.pl">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Telefon</label>
-                                <input type="tel" id="phone" name="phone" placeholder="71 310 97 27">
+                                <input type="tel" id="phone" name="phone" placeholder="+48 123 456 789">
                             </div>
                         </div>
+
                         <div class="form-group">
-                            <label for="service">Interesuje mnie</label>
-                            <select id="service" name="service">
-                                <option value="">Wybierz usługę...</option>
-                                <option value="kuchnia">Kuchnia na wymiar</option>
-                                <option value="szafa">Szafa wnękowa</option>
-                                <option value="garderoba">Garderoba</option>
-                                <option value="lazienka">Meble łazienkowe</option>
-                                <option value="inne">Inne</option>
+                            <label for="budget">Budżet</label>
+                            <select id="budget" name="budget">
+                                <option value="">Wybierz zakres...</option>
+                                <option value="starter">2,500 - 4,500 PLN (Starter/Pro)</option>
+                                <option value="premium">4,500 - 7,500 PLN (Pro/Premium)</option>
+                                <option value="custom">7,500+ PLN (Custom)</option>
+                                <option value="unknown">Nie wiem jeszcze</option>
                             </select>
                         </div>
+
                         <div class="form-group">
-                            <label for="message">Wiadomość</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Opisz swój projekt lub zadaj pytanie..."></textarea>
+                            <label for="message">Opisz swój projekt *</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Powiedz mi czym się zajmujesz i jakiej strony potrzebujesz..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">
+
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">
                             <span>Wyślij wiadomość</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="22" y1="2" x2="11" y2="13"/>
                                 <polygon points="22 2 15 22 11 13 2 9 22 2"/>
                             </svg>
                         </button>
+
+                        <p class="form-note">Odpowiadam w ciągu 24h. Bez spamu, bez newslettera.</p>
                     </form>
                 </div>
             </div>
@@ -719,52 +848,35 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
+            <div class="footer-content">
                 <div class="footer-brand">
                     <a href="#home" class="logo">
-                        <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+                        <span class="logo-bracket">&lt;</span>qba<span class="logo-dot">.</span>dev<span class="logo-bracket">/&gt;</span>
                     </a>
-                    <p>
-                        Ekskluzywne meble na wymiar z Trzebnicy.
-                        10 lat doświadczenia w tworzeniu wyjątkowych wnętrz.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/luxmebleTrzebnica/" target="_blank" aria-label="Facebook" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                            </svg>
-                        </a>
-                    </div>
+                    <p>Senior Frontend Developer.<br>Landing page w 7 dni.</p>
                 </div>
+
                 <div class="footer-links">
                     <h4>Menu</h4>
                     <ul>
-                        <li><a href="#home">Start</a></li>
                         <li><a href="#uslugi">Usługi</a></li>
-                        <li><a href="#o-nas">O nas</a></li>
-                        <li><a href="#realizacje">Realizacje</a></li>
+                        <li><a href="#proces">Proces</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#cennik">Cennik</a></li>
                         <li><a href="#kontakt">Kontakt</a></li>
                     </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Usługi</h4>
-                    <ul>
-                        <li><a href="#uslugi">Kuchnie na wymiar</a></li>
-                        <li><a href="#uslugi">Szafy wnękowe</a></li>
-                        <li><a href="#uslugi">Garderoby</a></li>
-                        <li><a href="#uslugi">Meble łazienkowe</a></li>
-                    </ul>
-                </div>
+
                 <div class="footer-contact">
                     <h4>Kontakt</h4>
-                    <p>ul. B. Głowackiego 9</p>
-                    <p>55-100 Trzebnica</p>
-                    <p><a href="tel:+48713109727">71 310 97 27</a></p>
+                    <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+                    <p><a href="mailto:hello@qba.dev">hello@qba.dev</a></p>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2025 Lux-Meble. Wszystkie prawa zastrzeżone.</p>
-                <p>Strona wykonana z pasją do perfekcji.</p>
+                <p>&copy; 2025 qba.dev. Wszystkie prawa zastrzeżone.</p>
+                <p class="footer-made">Zrobione z <span class="heart">&#9829;</span> i dużą ilością kawy</p>
             </div>
         </div>
     </footer>
