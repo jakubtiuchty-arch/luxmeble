@@ -561,6 +561,9 @@ section {
     transition: var(--transition-medium);
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card::before {
@@ -645,6 +648,8 @@ section {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .service-link svg {
