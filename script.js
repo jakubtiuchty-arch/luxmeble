@@ -29,7 +29,7 @@ function initTypewriter() {
     element.style.visibility = 'visible';
 
     let index = 0;
-    const speed = 80; // milliseconds per character
+    const speed = 120; // milliseconds per character (slower)
 
     function type() {
         if (index < text.length) {
