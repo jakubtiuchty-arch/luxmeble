@@ -464,6 +464,9 @@ a {
     text-align: center;
     transition: var(--transition-medium);
     border: 1px solid transparent;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .service-card:hover {
@@ -516,6 +519,7 @@ a {
     text-transform: uppercase;
     color: var(--color-accent);
     font-weight: 500;
+    margin-top: auto;
 }
 
 .service-link svg {
