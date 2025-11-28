@@ -14,7 +14,39 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initScrollAnimations();
     initParticles();
+    initTypewriter();
 });
+
+/**
+ * Typewriter effect for hero accent text
+ */
+function initTypewriter() {
+    const element = document.querySelector('.title-accent');
+    if (!element) return;
+
+    const text = element.textContent;
+    element.textContent = '';
+    element.style.visibility = 'visible';
+
+    let index = 0;
+    const speed = 80; // milliseconds per character
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, speed);
+        } else {
+            // Remove cursor after typing is done
+            setTimeout(() => {
+                element.classList.add('typing-done');
+            }, 500);
+        }
+    }
+
+    // Start typewriter after a small delay
+    setTimeout(type, 800);
+}
 
 /**
  * Navbar scroll effect

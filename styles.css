@@ -304,6 +304,18 @@ a {
     font-size: clamp(3.5rem, 9vw, 6.5rem);
     color: var(--color-accent);
     font-weight: 400;
+    border-right: 3px solid var(--color-accent);
+    animation: blink-cursor 0.7s step-end infinite;
+}
+
+.title-accent.typing-done {
+    border-right: none;
+    animation: none;
+}
+
+@keyframes blink-cursor {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--color-accent); }
 }
 
 .hero-subtitle {
