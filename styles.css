@@ -520,6 +520,7 @@ a {
     color: var(--color-accent);
     font-weight: 500;
     margin-top: auto;
+    align-self: center;
 }
 
 .service-link svg {
