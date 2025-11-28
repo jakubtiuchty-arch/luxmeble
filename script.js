@@ -18,29 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Typewriter effect for hero accent text
+ * Reveal effect for hero accent text - reveals from left to right
  */
 function initTypewriter() {
     const element = document.querySelector('.title-accent');
     if (!element) return;
 
-    const text = element.textContent;
-    element.textContent = '';
-    element.style.visibility = 'visible';
-
-    let index = 0;
-    const speed = 120; // milliseconds per character (slower)
-
-    function type() {
-        if (index < text.length) {
-            element.textContent += text.charAt(index);
-            index++;
-            setTimeout(type, speed);
-        }
-    }
-
-    // Start typewriter after a small delay
-    setTimeout(type, 800);
+    // Start the reveal animation after a delay
+    setTimeout(() => {
+        element.classList.add('reveal-active');
+    }, 800);
 }
 
 /**

@@ -305,8 +305,20 @@ a {
     color: var(--color-accent);
     font-weight: 400;
     display: block;
-    text-align: left;
-    min-height: 1.2em;
+    clip-path: inset(0 100% 0 0);
+}
+
+.title-accent.reveal-active {
+    animation: revealText 2.5s ease-out forwards;
+}
+
+@keyframes revealText {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
 }
 
 .hero-subtitle {
