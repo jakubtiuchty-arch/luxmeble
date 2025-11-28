@@ -36,11 +36,6 @@ function initTypewriter() {
             element.textContent += text.charAt(index);
             index++;
             setTimeout(type, speed);
-        } else {
-            // Remove cursor after typing is done
-            setTimeout(() => {
-                element.classList.add('typing-done');
-            }, 500);
         }
     }
 
