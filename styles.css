@@ -1156,6 +1156,19 @@ a {
     justify-content: center;
 }
 
+.btn-full svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* CTA Button with icon */
+.btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
 /* ============================================
    FOOTER
    ============================================ */
