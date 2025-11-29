@@ -27,7 +27,7 @@
     /* Typography */
     --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-script: 'Allura', cursive;
+    --font-script: 'Great Vibes', cursive;
 
     /* Spacing */
     --section-padding: clamp(100px, 15vw, 180px);
