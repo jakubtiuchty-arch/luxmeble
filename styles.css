@@ -246,7 +246,7 @@ a {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 70% center;
+    object-position: 90% center;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
 }
