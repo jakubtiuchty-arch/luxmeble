@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initParticles();
     initTypewriter();
+    initZabudujButton();
 });
 
 /**
@@ -40,6 +41,41 @@ function initTypewriter() {
     }
 
     setTimeout(type, 800);
+}
+
+/**
+ * ZABUDUJ button - smooth image transition
+ */
+function initZabudujButton() {
+    const btn = document.getElementById('zabuduj-btn');
+    if (!btn) return;
+
+    const heroBg1 = document.querySelector('.hero-bg-1');
+    const heroBg2 = document.querySelector('.hero-bg-2');
+    const heroImg1 = document.querySelector('.hero-img-1');
+    const heroImg2 = document.querySelector('.hero-img-2');
+
+    let isToggled = false;
+
+    btn.addEventListener('click', function() {
+        isToggled = !isToggled;
+
+        if (isToggled) {
+            // Show second image (zabudowane)
+            if (heroBg1) heroBg1.classList.remove('active');
+            if (heroBg2) heroBg2.classList.add('active');
+            if (heroImg1) heroImg1.classList.remove('active');
+            if (heroImg2) heroImg2.classList.add('active');
+            btn.classList.add('toggled');
+        } else {
+            // Show first image (original)
+            if (heroBg1) heroBg1.classList.add('active');
+            if (heroBg2) heroBg2.classList.remove('active');
+            if (heroImg1) heroImg1.classList.add('active');
+            if (heroImg2) heroImg2.classList.remove('active');
+            btn.classList.remove('toggled');
+        }
+    });
 }
 
 /**
