@@ -243,10 +243,10 @@ a {
 
 .hero-bg-image img {
     position: absolute;
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
-    object-position: left center;
+    right: 0;
+    left: auto;
     opacity: 0;
     transition: opacity 1.2s ease-in-out;
 }
