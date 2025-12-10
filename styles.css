@@ -250,8 +250,8 @@ a {
     position: absolute;
     width: auto;
     height: 85%;
-    right: 0;
-    left: auto;
+    left: 0;
+    right: auto;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0;
