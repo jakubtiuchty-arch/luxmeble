@@ -254,14 +254,14 @@ a {
    ============================================ */
 
 .hero {
-    min-height: calc(100vh - 80px);
+    min-height: 70vh;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 60px var(--container-padding) 80px;
+    padding: 40px var(--container-padding) 60px;
     position: relative;
     background: var(--color-bg-primary);
     overflow: hidden;
@@ -378,7 +378,6 @@ a {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 80px;
 }
 
 /* Buttons */
@@ -437,9 +436,9 @@ a {
 }
 
 .btn-secondary {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .btn-secondary:hover {
