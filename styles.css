@@ -331,7 +331,7 @@ a {
 .hero-content.faded .hero-badge,
 .hero-content.faded .hero-title,
 .hero-content.faded .hero-subtitle {
-    opacity: 0.15 !important;
+    opacity: 0.25 !important;
     transition: opacity 0.8s ease 1.2s;
 }
 
