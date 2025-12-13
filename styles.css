@@ -310,13 +310,30 @@ a {
 
 .hero-bg-mobile video::-webkit-media-controls {
     display: none !important;
+    -webkit-appearance: none;
+}
+
+.hero-bg-mobile video::-webkit-media-controls-panel {
+    display: none !important;
+    -webkit-appearance: none;
 }
 
 .hero-bg-mobile video::-webkit-media-controls-start-playback-button {
     display: none !important;
+    -webkit-appearance: none;
 }
 
 .hero-bg-mobile video::-webkit-media-controls-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+.hero-bg-mobile video::--webkit-media-controls-overlay-play-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+
+.hero-bg-mobile video::-webkit-media-controls-enclosure {
     display: none !important;
 }
 

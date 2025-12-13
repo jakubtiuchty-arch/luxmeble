@@ -16,7 +16,25 @@ document.addEventListener('DOMContentLoaded', function() {
     initParticles();
     initTypewriter();
     initZabudujButton();
+    initMobileVideo();
 });
+
+/**
+ * Force play mobile hero video on iOS
+ */
+function initMobileVideo() {
+    const video = document.getElementById('hero-mobile-video');
+    if (!video) return;
+
+    // Force play on iOS
+    video.play().catch(function() {
+        // If autoplay fails, try playing on first user interaction
+        document.addEventListener('touchstart', function playOnTouch() {
+            video.play();
+            document.removeEventListener('touchstart', playOnTouch);
+        }, { once: true });
+    });
+}
 
 /**
  * Typewriter effect for hero accent text
