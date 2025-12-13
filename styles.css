@@ -1426,6 +1426,23 @@ a {
     color: rgba(255, 255, 255, 0.4);
 }
 
+.footer-credit {
+    margin-top: 10px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Courier New', monospace;
+}
+
+.footer-credit a {
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: var(--color-gold);
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
