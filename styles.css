@@ -47,8 +47,6 @@
     /* Layout */
     --navbar-height: 104px;
     --navbar-height-scrolled: 84px;
-    --navbar-pad-bottom: 16px;
-    --navbar-pad-bottom-scrolled: 14px;
 }
 
 /* Reset & Base */
@@ -118,8 +116,8 @@ a {
     z-index: 1000;
     height: var(--navbar-height);
     display: flex;
-    align-items: center;
-    padding: 0 0 var(--navbar-pad-bottom);
+    align-items: flex-start;
+    padding: 25px 0 0;
     transition: var(--transition-medium);
 }
 
@@ -127,7 +125,7 @@ a {
     background: rgba(250, 247, 242, 0.95);
     backdrop-filter: blur(20px);
     height: var(--navbar-height-scrolled);
-    padding-bottom: var(--navbar-pad-bottom-scrolled);
+    padding-top: 15px;
     box-shadow: var(--shadow-sm);
 }
 
@@ -139,7 +137,6 @@ a {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
 }
 
 .logo {
