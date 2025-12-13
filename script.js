@@ -52,8 +52,7 @@ function initZabudujButton() {
 
     const heroBg1 = document.querySelector('.hero-bg-1');
     const heroBg2 = document.querySelector('.hero-bg-2');
-    const heroImg1 = document.querySelector('.hero-img-1');
-    const heroImg2 = document.querySelector('.hero-img-2');
+    const heroContent = document.querySelector('.hero-content');
 
     let isToggled = false;
 
@@ -61,18 +60,16 @@ function initZabudujButton() {
         isToggled = !isToggled;
 
         if (isToggled) {
-            // Show second image (zabudowane)
+            // Show second image (zabudowane) and fade out text
             if (heroBg1) heroBg1.classList.remove('active');
             if (heroBg2) heroBg2.classList.add('active');
-            if (heroImg1) heroImg1.classList.remove('active');
-            if (heroImg2) heroImg2.classList.add('active');
+            if (heroContent) heroContent.classList.add('faded');
             btn.classList.add('toggled');
         } else {
-            // Show first image (original)
+            // Show first image (original) and restore text
             if (heroBg1) heroBg1.classList.add('active');
             if (heroBg2) heroBg2.classList.remove('active');
-            if (heroImg1) heroImg1.classList.add('active');
-            if (heroImg2) heroImg2.classList.remove('active');
+            if (heroContent) heroContent.classList.remove('faded');
             btn.classList.remove('toggled');
         }
     });

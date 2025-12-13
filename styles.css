@@ -328,6 +328,19 @@ a {
     z-index: 2;
 }
 
+.hero-content.faded .hero-badge,
+.hero-content.faded .hero-title,
+.hero-content.faded .hero-subtitle {
+    opacity: 0.15;
+    transition: opacity 0.8s ease;
+}
+
+.hero-content .hero-badge,
+.hero-content .hero-title,
+.hero-content .hero-subtitle {
+    transition: opacity 0.8s ease;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
