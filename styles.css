@@ -308,6 +308,18 @@ a {
     left: 0;
 }
 
+.hero-bg-mobile video::-webkit-media-controls {
+    display: none !important;
+}
+
+.hero-bg-mobile video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+}
+
+.hero-bg-mobile video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
 .hero-overlay {
     position: absolute;
     inset: 0;
