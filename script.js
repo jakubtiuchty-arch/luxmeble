@@ -158,7 +158,8 @@ function initSmoothScroll() {
 
             const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 80;
+                const navbar = document.getElementById('navbar');
+                const headerOffset = navbar ? navbar.offsetHeight : 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
