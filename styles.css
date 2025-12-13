@@ -47,8 +47,8 @@
     /* Layout */
     --navbar-height: 96px;
     --navbar-height-scrolled: 76px;
-    --navbar-pad-bottom: 12px;
-    --navbar-pad-bottom-scrolled: 10px;
+    --navbar-pad-bottom: 16px;
+    --navbar-pad-bottom-scrolled: 14px;
 }
 
 /* Reset & Base */
