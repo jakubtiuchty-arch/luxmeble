@@ -203,6 +203,24 @@ a {
     background: var(--color-accent);
 }
 
+.nav-cta-gold {
+    background: var(--color-gold);
+    color: var(--color-text-primary) !important;
+    padding: 12px 28px !important;
+    border-radius: 0;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+}
+
+.nav-cta-gold::after {
+    display: none;
+}
+
+.nav-cta-gold:hover {
+    background: var(--color-accent);
+    color: var(--color-text-light) !important;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
