@@ -321,6 +321,11 @@ a {
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
 }
 
+/* Ensure hero accent line stays white even if overridden elsewhere */
+.hero .hero-title .title-accent {
+    color: #fff !important;
+}
+
 .hero-subtitle {
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
