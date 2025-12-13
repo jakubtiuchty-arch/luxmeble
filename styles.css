@@ -1486,13 +1486,29 @@ a {
         gap: 30px;
     }
 
+    .hero-bg-image {
+        top: auto;
+        bottom: 0;
+        height: 50vh;
+    }
+
     .hero-bg-image img {
         width: 100%;
         height: 100%;
         left: 0;
         right: 0;
-        object-fit: cover;
-        object-position: center;
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    .hero {
+        justify-content: flex-start;
+        padding-top: 40px;
+        padding-bottom: 0;
+    }
+
+    .hero-content {
+        padding-bottom: 52vh;
     }
 
     .services-grid {
