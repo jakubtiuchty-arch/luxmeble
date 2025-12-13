@@ -110,12 +110,13 @@ a {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 25px 0;
+    padding: 20px 0;
+    background: var(--color-bg-primary);
     transition: var(--transition-medium);
 }
 
 .navbar.scrolled {
-    background: rgba(250, 247, 242, 0.95);
+    background: rgba(250, 247, 242, 0.98);
     backdrop-filter: blur(20px);
     padding: 15px 0;
     box-shadow: var(--shadow-sm);
