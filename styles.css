@@ -419,22 +419,42 @@ a {
 }
 
 .btn-zabuduj {
-    background: var(--color-accent);
-    color: var(--color-text-light);
+    background: var(--color-gold);
+    color: var(--color-text-primary);
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     cursor: pointer;
     border: none;
+    position: relative;
+    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(201, 168, 124, 0.5);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(201, 168, 124, 0.5);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(201, 168, 124, 0.8), 0 0 50px rgba(201, 168, 124, 0.4);
+        transform: scale(1.03);
+    }
 }
 
 .btn-zabuduj:hover {
-    background: var(--color-gold);
-    transform: translateY(-2px);
+    background: var(--color-accent);
+    color: var(--color-text-light);
+    transform: scale(1.05);
+    animation: none;
+    box-shadow: 0 0 30px rgba(201, 168, 124, 0.7);
 }
 
 .btn-zabuduj.toggled {
     background: var(--color-text-primary);
+    color: var(--color-text-light);
+    animation: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .btn-secondary {
