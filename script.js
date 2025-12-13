@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initGalleryFilter();
     initContactForm();
     initScrollAnimations();
-    initParticles();
     initTypewriter();
     initZabudujButton();
 });
@@ -109,27 +108,40 @@ function initMobileMenu() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
+    if (!hamburger || !navMenu) return;
+
+    function setMenuOpen(isOpen) {
+        hamburger.classList.toggle('active', isOpen);
+        navMenu.classList.toggle('active', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.setAttribute('aria-label', isOpen ? 'Zamknij menu' : 'Otwórz menu');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
+
     hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        setMenuOpen(!navMenu.classList.contains('active'));
     });
 
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            setMenuOpen(false);
         });
     });
 
     // Close menu on outside click
     document.addEventListener('click', function(e) {
+        if (!navMenu.classList.contains('active')) return;
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
+            setMenuOpen(false);
+        }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            setMenuOpen(false);
+            hamburger.focus();
         }
     });
 }
@@ -146,7 +158,8 @@ function initSmoothScroll() {
 
             const target = document.querySelector(targetId);
             if (target) {
-                const headerOffset = 80;
+                const navbar = document.getElementById('navbar');
+                const headerOffset = navbar ? navbar.offsetHeight : 80;
                 const elementPosition = target.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -560,6 +573,7 @@ function initActiveNavigation() {
     }
 
     window.addEventListener('scroll', highlightNav, { passive: true });
+    highlightNav(); // Initial highlight
 }
 
 // Initialize active navigation
@@ -568,18 +582,7 @@ initActiveNavigation();
 /**
  * Parallax effect on scroll
  */
-function initParallax() {
-    const hero = document.querySelector('.hero');
-
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (hero && scrolled < window.innerHeight) {
-            hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
-        }
-    }, { passive: true });
-}
-
-initParallax();
+// Parallax was removed (hero uses real images, not background-position)
 
 /**
  * Preloader (optional - add preloader HTML if needed)
