@@ -131,6 +131,12 @@ a {
     justify-content: space-between;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .logo {
     font-family: var(--font-heading);
     font-size: 1.6rem;
