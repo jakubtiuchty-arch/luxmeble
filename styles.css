@@ -1487,6 +1487,10 @@ a {
         display: block;
     }
 
+    .btn-zabuduj {
+        display: none;
+    }
+
     .services-grid {
         grid-template-columns: 1fr;
     }
