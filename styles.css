@@ -45,8 +45,8 @@
     --shadow-lg: 0 25px 80px rgba(44, 37, 32, 0.12);
 
     /* Layout */
-    --navbar-height: 96px;
-    --navbar-height-scrolled: 76px;
+    --navbar-height: 104px;
+    --navbar-height-scrolled: 84px;
     --navbar-pad-bottom: 16px;
     --navbar-pad-bottom-scrolled: 14px;
 }
