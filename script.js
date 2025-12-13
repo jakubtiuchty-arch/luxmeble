@@ -106,29 +106,29 @@ function initNavbar() {
  */
 function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
+    const navRight = document.querySelector('.nav-right');
     const navLinks = document.querySelectorAll('.nav-link');
 
     hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        navRight.classList.toggle('active');
+        document.body.style.overflow = navRight.classList.contains('active') ? 'hidden' : '';
     });
 
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            navRight.classList.remove('active');
             document.body.style.overflow = '';
         });
     });
 
     // Close menu on outside click
     document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        if (!hamburger.contains(e.target) && !navRight.contains(e.target)) {
             hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            navRight.classList.remove('active');
             document.body.style.overflow = '';
         }
     });

@@ -1427,7 +1427,7 @@ a {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
+    .nav-right {
         position: fixed;
         top: 0;
         right: -100%;
@@ -1437,14 +1437,31 @@ a {
         background: var(--color-bg-primary);
         flex-direction: column;
         justify-content: center;
-        gap: 30px;
+        gap: 40px;
         padding: 40px;
         transition: var(--transition-medium);
         box-shadow: var(--shadow-lg);
+        z-index: 1000;
     }
 
-    .nav-menu.active {
+    .nav-right.active {
         right: 0;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-cta-buttons .nav-link {
+        text-align: center;
+        width: 100%;
     }
 
     .hamburger {
