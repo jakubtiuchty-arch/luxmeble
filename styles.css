@@ -222,6 +222,12 @@ a {
     color: var(--color-text-light) !important;
 }
 
+.nav-cta-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .hamburger {
     display: none;
     flex-direction: column;
