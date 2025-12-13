@@ -254,7 +254,7 @@ a {
    ============================================ */
 
 .hero {
-    min-height: 80vh;
+    min-height: 90vh;
     margin-top: 80px;
     display: flex;
     flex-direction: column;
