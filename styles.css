@@ -332,7 +332,7 @@ a {
 .hero-content.faded .hero-title,
 .hero-content.faded .hero-subtitle {
     opacity: 0.15 !important;
-    transition: opacity 1s ease 0.4s;
+    transition: opacity 0.8s ease 1.2s;
 }
 
 .hero-content .hero-badge,
