@@ -17,7 +17,7 @@ const ADMIN_PASSWORD = 'luxmeble2024';
 // INICJALIZACJA
 // =====================
 
-let supabase = null;
+let supabaseClient = null;
 let submissions = [];
 let currentFilter = 'all';
 let currentSubmission = null;
@@ -31,7 +31,7 @@ function isSupabaseConfigured() {
 // Inicjalizacja Supabase
 function initSupabase() {
     if (isSupabaseConfigured() && window.supabase) {
-        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         return true;
     }
     return false;
@@ -87,7 +87,7 @@ async function loadSubmissions() {
     showLoading(true);
 
     try {
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('submissions')
             .select('*')
             .order('created_at', { ascending: false });
@@ -106,7 +106,7 @@ async function loadSubmissions() {
 }
 
 async function updateSubmissionStatus(id, contacted) {
-    if (!supabase) {
+    if (!supabaseClient) {
         // Demo mode - update local only
         const submission = submissions.find(s => s.id === id);
         if (submission) {
@@ -118,7 +118,7 @@ async function updateSubmissionStatus(id, contacted) {
     }
 
     try {
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from('submissions')
             .update({ contacted: contacted })
             .eq('id', id);
