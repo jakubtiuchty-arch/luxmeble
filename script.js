@@ -3,45 +3,7 @@
  * Premium furniture manufacturer from Trzebnica
  */
 
-// =====================
-// KONFIGURACJA SUPABASE
-// =====================
-const SUPABASE_URL = 'https://tizciyilckwicjexlzgr.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_6YR_Zq0dMCoMZtvC08c4iw_8H0lT6KZ';
-
-let supabaseClient = null;
-
-// Inicjalizacja Supabase (jeśli dostępny)
-function initSupabaseClient() {
-    if (typeof supabase !== 'undefined' &&
-        SUPABASE_URL !== 'YOUR_SUPABASE_URL' &&
-        SUPABASE_ANON_KEY !== 'YOUR_SUPABASE_ANON_KEY') {
-        supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    }
-}
-
-// Zapisz zgłoszenie do Supabase
-async function saveSubmissionToDatabase(data) {
-    if (!supabaseClient) return;
-
-    try {
-        await supabaseClient
-            .from('submissions')
-            .insert([{
-                name: data.name,
-                email: data.email,
-                phone: data.phone || '',
-                message: data.message || '',
-                contacted: false
-            }]);
-    } catch (error) {
-        console.error('Błąd zapisu do bazy:', error);
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Supabase
-    initSupabaseClient();
     // Initialize all components
     initNavbar();
     initMobileMenu();
@@ -396,23 +358,22 @@ function initContactForm() {
                 return;
             }
 
-            // Submit to Formspree
+            // Submit to API
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<span>Wysyłanie...</span>';
             submitBtn.disabled = true;
 
-            fetch(form.action, {
+            fetch('/api/submit', {
                 method: 'POST',
-                body: formData,
+                body: JSON.stringify(data),
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
             })
             .then(response => {
                 if (response.ok) {
-                    // Zapisz do Supabase (panel admin)
-                    saveSubmissionToDatabase(data);
                     showSuccessModal();
                     form.reset();
                 } else {
