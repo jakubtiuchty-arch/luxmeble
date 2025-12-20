@@ -6,9 +6,8 @@
 // =====================
 // KONFIGURACJA SUPABASE
 // =====================
-// Uzupełnij dane po utworzeniu projektu na supabase.com
-const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL = 'https://tizciyilckwicjexlzgr.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_6YR_Zq0dMCoMZtvC08c4iw_8H0lT6KZ';
 
 let supabaseClient = null;
 
