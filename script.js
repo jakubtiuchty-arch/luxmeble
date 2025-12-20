@@ -373,7 +373,7 @@ function initContactForm() {
             })
             .then(response => {
                 if (response.ok) {
-                    showNotification('Dziękujemy! Wiadomość została wysłana. Skontaktujemy się wkrótce.', 'success');
+                    showSuccessModal();
                     form.reset();
                 } else {
                     throw new Error('Błąd wysyłania');
@@ -471,6 +471,28 @@ function showNotification(message, type = 'success') {
             setTimeout(() => notification.remove(), 300);
         }
     }, 5000);
+}
+
+/**
+ * Show success modal after form submission
+ */
+function showSuccessModal() {
+    const modal = document.getElementById('success-modal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+/**
+ * Close success modal
+ */
+function closeModal() {
+    const modal = document.getElementById('success-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
 }
 
 /**
