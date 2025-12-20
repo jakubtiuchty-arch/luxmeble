@@ -358,18 +358,34 @@ function initContactForm() {
                 return;
             }
 
-            // Simulate form submission (replace with actual API call)
+            // Submit to Formspree
             const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<span>Wysyłanie...</span>';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                showNotification('Dziękujemy! Wiadomość została wysłana. Skontaktujemy się wkrótce.', 'success');
-                form.reset();
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('Dziękujemy! Wiadomość została wysłana. Skontaktujemy się wkrótce.', 'success');
+                    form.reset();
+                } else {
+                    throw new Error('Błąd wysyłania');
+                }
+            })
+            .catch(error => {
+                showNotification('Przepraszamy, wystąpił błąd. Spróbuj ponownie lub zadzwoń.', 'error');
+            })
+            .finally(() => {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-            }, 1500);
+            });
         });
     }
 }
