@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    { "source": "/sklep/:path*", "destination": "/", "permanent": true },
+    { "source": "/product/:path*", "destination": "/", "permanent": true },
+    { "source": "/produkty/:path*", "destination": "/", "permanent": true },
+    { "source": "/kategoria/:path*", "destination": "/", "permanent": true },
+    { "source": "/koszyk", "destination": "/", "permanent": true },
+    { "source": "/zamowienie/:path*", "destination": "/", "permanent": true },
+    { "source": "/moje-konto/:path*", "destination": "/", "permanent": true },
+    { "source": "/shop/:path*", "destination": "/", "permanent": true },
+    { "source": "/cart", "destination": "/", "permanent": true },
+    { "source": "/checkout/:path*", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" }
   ],
