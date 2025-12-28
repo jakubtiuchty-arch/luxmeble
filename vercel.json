@@ -1,10 +1,19 @@
 {
   "redirects": [
-    {
-      "source": "/:path((?!admin|api|images|_vercel|sitemap\\.xml|robots\\.txt|favicon\\.ico|.*\\.(js|css|jpg|jpeg|png|gif|svg|webp|mp4|pdf)).*)",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/glowna/:path*", "destination": "/", "permanent": true },
+    { "source": "/produkt/:path*", "destination": "/", "permanent": true },
+    { "source": "/produkty/:path*", "destination": "/", "permanent": true },
+    { "source": "/kategoria/:path*", "destination": "/", "permanent": true },
+    { "source": "/sklep/:path*", "destination": "/", "permanent": true },
+    { "source": "/koszyk", "destination": "/", "permanent": true },
+    { "source": "/zamowienie/:path*", "destination": "/", "permanent": true },
+    { "source": "/moje-konto/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-admin/:path*", "destination": "/", "permanent": true },
+    { "source": "/wp-includes/:path*", "destination": "/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "/", "permanent": true },
+    { "source": "/strona/:path*", "destination": "/", "permanent": true },
+    { "source": "/page/:path*", "destination": "/", "permanent": true }
   ],
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" }
