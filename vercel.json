@@ -2,13 +2,6 @@
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" }
   ],
-  "redirects": [
-    {
-      "source": "/((?!api|admin|images|_vercel|favicon\\.ico|sitemap\\.xml|robots\\.txt|styles\\.css|script\\.js|admin\\.css|admin\\.js|.*\\.(?:jpg|jpeg|png|gif|svg|webp|mp4|pdf|ico)).*)",
-      "destination": "/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/admin",
