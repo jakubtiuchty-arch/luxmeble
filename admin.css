@@ -1074,6 +1074,51 @@ body {
 }
 
 /* ===================== */
+/* Touch-friendly improvements */
+/* ===================== */
+
+/* Larger touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    .category-tab,
+    .admin-nav-tab,
+    .filter-tab,
+    .btn {
+        min-height: 44px;
+    }
+
+    .gallery-item-delete {
+        width: 40px;
+        height: 40px;
+    }
+
+    .upload-dropzone {
+        min-height: 150px;
+    }
+
+    /* Always show delete button on touch devices */
+    .gallery-item-overlay {
+        opacity: 1;
+    }
+
+    /* Better touch feedback */
+    .category-tab:active,
+    .admin-nav-tab:active,
+    .filter-tab:active,
+    .btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .gallery-item:active {
+        transform: scale(0.98);
+    }
+
+    .gallery-item-delete:active {
+        transform: scale(1.15);
+    }
+}
+
+/* ===================== */
 /* Responsive */
 /* ===================== */
 
@@ -1402,5 +1447,131 @@ body {
     .loading-state,
     .empty-state {
         padding: 50px 20px;
+    }
+
+    /* Gallery mobile styles */
+    .gallery-header {
+        margin-bottom: 20px;
+    }
+
+    .gallery-header h2 {
+        font-size: 22px;
+    }
+
+    .gallery-header p {
+        font-size: 13px;
+    }
+
+    .category-tabs {
+        gap: 8px;
+        margin-bottom: 20px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-tab {
+        padding: 10px 14px;
+        font-size: 12px;
+        gap: 6px;
+    }
+
+    .category-tab svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .category-count {
+        min-width: 20px;
+        height: 20px;
+        font-size: 10px;
+        padding: 0 6px;
+    }
+
+    .upload-dropzone {
+        padding: 25px 15px;
+    }
+
+    .upload-dropzone svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .upload-text {
+        font-size: 14px;
+    }
+
+    .upload-hint {
+        font-size: 11px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .gallery-grid-header {
+        padding: 15px;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
+    }
+
+    .gallery-grid-header h3 {
+        font-size: 13px;
+    }
+
+    .gallery-item-overlay {
+        opacity: 1;
+        background: linear-gradient(transparent 30%, rgba(0, 0, 0, 0.85));
+        padding: 10px;
+    }
+
+    .gallery-item-name {
+        font-size: 10px;
+    }
+
+    .gallery-item-delete {
+        width: 28px;
+        height: 28px;
+    }
+
+    .gallery-item-delete svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .gallery-empty {
+        padding: 40px 20px;
+    }
+
+    .gallery-empty svg {
+        width: 48px;
+        height: 48px;
+    }
+
+    .gallery-empty p {
+        font-size: 14px;
+    }
+
+    .gallery-empty span {
+        font-size: 12px;
+    }
+
+    /* Delete modal mobile */
+    .modal-small {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .delete-preview {
+        max-height: 150px;
+    }
+
+    .modal-footer-buttons {
+        flex-direction: column;
+    }
+
+    .modal-footer-buttons .btn {
+        width: 100%;
     }
 }

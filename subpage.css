@@ -534,9 +534,141 @@
 @media (max-width: 480px) {
     .subpage-hero {
         min-height: 50vh;
+        padding: 90px 0 40px;
+    }
+
+    .subpage-hero h1 {
+        font-size: 1.75rem;
+        margin-bottom: 15px;
+    }
+
+    .subpage-hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .breadcrumb li {
+        font-size: 12px;
+    }
+
+    .subpage-features {
+        padding: 50px 0;
+    }
+
+    .feature-card {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .feature-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .feature-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .feature-card h3 {
+        font-size: 1rem;
+        margin-bottom: 3px;
+    }
+
+    .feature-card p {
+        font-size: 0.85rem;
+    }
+
+    .subpage-about {
+        padding: 50px 0;
+    }
+
+    .subpage-about h2 {
+        font-size: 1.5rem;
+    }
+
+    .subpage-about p {
+        font-size: 0.95rem;
+    }
+
+    .about-feature {
+        font-size: 0.9rem;
+    }
+
+    .subpage-gallery {
+        padding: 50px 0;
+    }
+
+    .gallery-grid {
+        gap: 15px;
+    }
+
+    .gallery-item {
+        border-radius: 8px;
+    }
+
+    .subpage-process {
+        padding: 50px 0;
+    }
+
+    .process-step {
+        padding: 20px;
+    }
+
+    .step-number {
+        font-size: 1.5rem;
+    }
+
+    .step-content h3 {
+        font-size: 1rem;
+    }
+
+    .step-content p {
+        font-size: 0.85rem;
+    }
+
+    .subpage-faq {
+        padding: 50px 0;
+    }
+
+    .faq-question {
+        padding: 15px;
     }
 
     .faq-question span {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer {
+        padding: 0 15px 15px;
+        font-size: 0.9rem;
+    }
+
+    .subpage-cta {
+        padding: 50px 0;
+    }
+
+    .subpage-cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .subpage-cta p {
+        font-size: 0.95rem;
+    }
+
+    .cta-buttons .btn {
+        padding: 14px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* Footer mobile on subpages */
+    .footer-column {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-column:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
     }
 }
