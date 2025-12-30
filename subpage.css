@@ -20,17 +20,17 @@
     display: flex;
     align-items: center;
     font-size: 14px;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .breadcrumb li:not(:last-child)::after {
     content: '/';
     margin-left: 10px;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .breadcrumb a {
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -98,12 +98,12 @@
     font-weight: 500;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: var(--color-text-primary);
+    color: #ffffff;
 }
 
 .subpage-hero-subtitle {
     font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    color: rgba(255, 255, 255, 0.85);
     line-height: 1.7;
     margin-bottom: 30px;
 }
