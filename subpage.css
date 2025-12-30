@@ -2,6 +2,17 @@
 /* Subpage Styles */
 /* ===================== */
 
+/* Gold accent text - consistent with main page */
+.text-gold {
+    font-family: var(--font-script);
+    color: var(--color-accent);
+}
+
+h1 .text-gold,
+h2 .text-gold {
+    font-size: 1.2em;
+}
+
 /* Breadcrumb */
 .breadcrumb {
     margin-bottom: 20px;
