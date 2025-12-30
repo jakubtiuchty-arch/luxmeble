@@ -54,7 +54,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 70%;
     height: 100%;
     z-index: 0;
 }
@@ -75,11 +75,10 @@
     background: linear-gradient(
         to right,
         rgba(13, 13, 13, 1) 0%,
-        rgba(13, 13, 13, 1) 35%,
-        rgba(13, 13, 13, 0.8) 50%,
-        rgba(13, 13, 13, 0.4) 70%,
-        rgba(13, 13, 13, 0.1) 85%,
-        transparent 100%
+        rgba(13, 13, 13, 0.95) 25%,
+        rgba(13, 13, 13, 0.6) 40%,
+        rgba(13, 13, 13, 0.2) 55%,
+        transparent 70%
     );
     z-index: 1;
 }
