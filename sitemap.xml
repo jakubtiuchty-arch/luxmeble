@@ -155,12 +155,4 @@
         </image:image>
     </url>
 
-    <!-- Subpage: Schody -->
-    <url>
-        <loc>https://lux-meble.pl/schody</loc>
-        <lastmod>2025-12-30</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
 </urlset>

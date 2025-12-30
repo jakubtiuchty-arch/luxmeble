@@ -40,28 +40,37 @@
     </script>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="/" class="nav-logo">LUX<span>MEBLE</span></a>
-            <ul class="nav-menu">
-                <li><a href="/">Start</a></li>
-                <li class="nav-dropdown">
-                    <a href="#" class="dropdown-toggle">Usługi</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/kuchnie">Kuchnie</a></li>
-                        <li><a href="/szafy">Szafy</a></li>
-                        <li><a href="/garderoby" class="active">Garderoby</a></li>
-                        <li><a href="/lazienki">Łazienki</a></li>
-                        <li><a href="/schody">Zabudowy schodów</a></li>
-                    </ul>
-                </li>
-                <li><a href="/#realizacje">Realizacje</a></li>
-                <li><a href="/#opinie">Opinie</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="/#kontakt" class="btn btn-primary">Bezpłatna wycena</a>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+            </a>
+            <div class="nav-right">
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/" class="nav-link">Start</a></li>
+                    <li class="nav-dropdown">
+                        <a href="/#uslugi" class="nav-link">Usługi</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/kuchnie">Kuchnie na wymiar</a></li>
+                            <li><a href="/szafy">Szafy wnękowe</a></li>
+                            <li><a href="/garderoby">Garderoby</a></li>
+                            <li><a href="/lazienki">Meble łazienkowe</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/#o-nas" class="nav-link">O nas</a></li>
+                    <li><a href="/#realizacje" class="nav-link">Realizacje</a></li>
+                    <li><a href="/#opinie" class="nav-link">Opinie</a></li>
+                </ul>
+                <div class="nav-cta-buttons">
+                    <a href="/#kontakt" class="nav-link nav-cta">Kontakt</a>
+                    <a href="/#kontakt" class="nav-link nav-cta-gold">Bezpłatna wycena</a>
+                </div>
             </div>
-            <button class="mobile-menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -227,23 +236,39 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">LUX<span>MEBLE</span></div>
+            <div class="footer-main">
+                <a href="/" class="logo">
+                    <span class="logo-lux">LUX</span><span class="logo-meble">MEBLE</span>
+                </a>
                 <nav class="footer-nav">
                     <a href="/">Start</a>
-                    <a href="/kuchnie">Kuchnie</a>
-                    <a href="/szafy">Szafy</a>
-                    <a href="/garderoby">Garderoby</a>
-                    <a href="/lazienki">Łazienki</a>
+                    <a href="/#uslugi">Usługi</a>
+                    <a href="/#o-nas">O nas</a>
+                    <a href="/#realizacje">Realizacje</a>
                     <a href="/#kontakt">Kontakt</a>
                 </nav>
                 <div class="footer-contact">
-                    <a href="tel:+48502333012">+48 502 333 012</a>
-                    <a href="tel:+48506050979">+48 506 050 979</a>
+                    <span>ul. B. Głowackiego 9, 55-100 Trzebnica</span>
+                    <a href="tel:+48502333012">502 333 012</a>
+                    <a href="tel:+48506050979">506 050 979</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/luxmebleTrzebnica/" target="_blank" aria-label="Facebook" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/lux_meble?igsh=MXYxczc3ZDZhd3ZoeA==" target="_blank" aria-label="Instagram" class="social-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="17.5" cy="6.5" r="1.5"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Lux-Meble Trzebnica. Wszystkie prawa zastrzeżone.</p>
+                <p>&copy; 2025 Lux-Meble. Wszystkie prawa zastrzeżone.</p>
                 <p class="footer-credit">Crafted by <a href="https://qba.dev" target="_blank" rel="noopener">&lt;qba.dev/&gt;</a></p>
             </div>
         </div>

@@ -4,8 +4,7 @@
     { "source": "/kuchnie", "destination": "/kuchnie.html" },
     { "source": "/szafy", "destination": "/szafy.html" },
     { "source": "/garderoby", "destination": "/garderoby.html" },
-    { "source": "/lazienki", "destination": "/lazienki.html" },
-    { "source": "/schody", "destination": "/schody.html" }
+    { "source": "/lazienki", "destination": "/lazienki.html" }
   ],
   "headers": [
     {
