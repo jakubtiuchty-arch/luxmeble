@@ -1,10 +1,10 @@
 {
   "rewrites": [
     { "source": "/admin", "destination": "/admin.html" },
-    { "source": "/kuchnie", "destination": "/kuchnie.html" },
-    { "source": "/szafy", "destination": "/szafy.html" },
-    { "source": "/garderoby", "destination": "/garderoby.html" },
-    { "source": "/lazienki", "destination": "/lazienki.html" }
+    { "source": "/kuchnie-trzebnica", "destination": "/kuchnie-trzebnica.html" },
+    { "source": "/szafy-trzebnica", "destination": "/szafy-trzebnica.html" },
+    { "source": "/garderoby-trzebnica", "destination": "/garderoby-trzebnica.html" },
+    { "source": "/lazienki-trzebnica", "destination": "/lazienki-trzebnica.html" }
   ],
   "headers": [
     {
