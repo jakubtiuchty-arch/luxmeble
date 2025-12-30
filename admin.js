@@ -22,6 +22,18 @@ let submissions = [];
 let currentFilter = 'all';
 let currentSubmission = null;
 
+// Gallery state
+let galleryImages = [];
+let currentCategory = 'kuchnie';
+let imageToDelete = null;
+
+const CATEGORY_NAMES = {
+    kuchnie: 'Kuchnie',
+    szafy: 'Szafy',
+    garderoby: 'Garderoby',
+    lazienki: 'Łazienki'
+};
+
 // Sprawdź czy Supabase jest skonfigurowany
 function isSupabaseConfigured() {
     return SUPABASE_URL !== 'YOUR_SUPABASE_URL' &&
@@ -358,6 +370,274 @@ function formatDate(dateString, full = false) {
 }
 
 // =====================
+// GALLERY MANAGEMENT
+// =====================
+
+function switchSection(section) {
+    // Update tabs
+    document.querySelectorAll('.admin-nav-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.section === section);
+    });
+
+    // Update sections
+    document.querySelectorAll('.admin-section').forEach(sec => {
+        sec.classList.remove('active');
+    });
+    document.getElementById(`section-${section}`).classList.add('active');
+
+    // Load gallery if switching to it
+    if (section === 'gallery') {
+        loadGalleryImages();
+    }
+}
+
+function setCategory(category) {
+    currentCategory = category;
+
+    // Update tabs
+    document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.category === category);
+    });
+
+    // Update header
+    document.getElementById('current-category-name').textContent = CATEGORY_NAMES[category];
+
+    // Load images
+    loadGalleryImages();
+}
+
+async function loadGalleryImages() {
+    if (!supabaseClient) {
+        showDemoGallery();
+        return;
+    }
+
+    try {
+        const { data, error } = await supabaseClient
+            .from('gallery')
+            .select('*')
+            .eq('category', currentCategory)
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+
+        galleryImages = data || [];
+        renderGallery();
+        updateCategoryCounts();
+    } catch (error) {
+        console.error('Błąd ładowania galerii:', error);
+        showDemoGallery();
+    }
+}
+
+async function updateCategoryCounts() {
+    if (!supabaseClient) return;
+
+    for (const category of Object.keys(CATEGORY_NAMES)) {
+        try {
+            const { count, error } = await supabaseClient
+                .from('gallery')
+                .select('*', { count: 'exact', head: true })
+                .eq('category', category);
+
+            if (!error) {
+                document.getElementById(`count-${category}`).textContent = count || 0;
+            }
+        } catch (e) {
+            console.error(e);
+        }
+    }
+}
+
+function showDemoGallery() {
+    // Demo images for display
+    galleryImages = [
+        { id: 1, url: 'images/kuchania-1.jpg', filename: 'kuchania-1.jpg', category: 'kuchnie' },
+        { id: 2, url: 'images/kuchania-2.jpg', filename: 'kuchania-2.jpg', category: 'kuchnie' }
+    ].filter(img => img.category === currentCategory);
+
+    renderGallery();
+
+    // Set demo counts
+    document.getElementById('count-kuchnie').textContent = '4';
+    document.getElementById('count-szafy').textContent = '3';
+    document.getElementById('count-garderoby').textContent = '2';
+    document.getElementById('count-lazienki').textContent = '4';
+}
+
+function renderGallery() {
+    const grid = document.getElementById('gallery-grid');
+    const empty = document.getElementById('gallery-empty');
+    const info = document.getElementById('gallery-info');
+
+    if (galleryImages.length === 0) {
+        grid.innerHTML = '';
+        grid.style.display = 'none';
+        empty.style.display = 'block';
+        info.textContent = '0 zdjęć';
+        return;
+    }
+
+    empty.style.display = 'none';
+    grid.style.display = 'grid';
+    info.textContent = `${galleryImages.length} ${galleryImages.length === 1 ? 'zdjęcie' : galleryImages.length < 5 ? 'zdjęcia' : 'zdjęć'}`;
+
+    grid.innerHTML = galleryImages.map(img => `
+        <div class="gallery-item" data-id="${img.id}">
+            <img src="${img.url}" alt="${img.filename}" loading="lazy">
+            <div class="gallery-item-overlay">
+                <span class="gallery-item-name">${img.filename}</span>
+                <button class="gallery-item-delete" onclick="event.stopPropagation(); confirmDelete(${img.id}, '${img.url}')">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="3 6 5 6 21 6"/>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// File Upload
+async function handleFileUpload(files) {
+    if (!files || files.length === 0) return;
+
+    const dropzone = document.getElementById('upload-dropzone');
+    const progress = document.getElementById('upload-progress');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+
+    dropzone.style.display = 'none';
+    progress.style.display = 'block';
+
+    let uploaded = 0;
+    const total = files.length;
+
+    for (const file of files) {
+        // Validate file
+        if (!file.type.startsWith('image/')) {
+            alert(`${file.name} nie jest obrazem`);
+            continue;
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            alert(`${file.name} przekracza limit 5MB`);
+            continue;
+        }
+
+        progressText.textContent = `Przesyłanie ${uploaded + 1}/${total}: ${file.name}`;
+
+        try {
+            await uploadImage(file);
+            uploaded++;
+            progressFill.style.width = `${(uploaded / total) * 100}%`;
+        } catch (error) {
+            console.error('Upload error:', error);
+            alert(`Błąd przesyłania ${file.name}`);
+        }
+    }
+
+    progressText.textContent = `Przesłano ${uploaded} z ${total} plików`;
+
+    setTimeout(() => {
+        progress.style.display = 'none';
+        dropzone.style.display = 'block';
+        progressFill.style.width = '0%';
+        loadGalleryImages();
+    }, 1500);
+}
+
+async function uploadImage(file) {
+    if (!supabaseClient) {
+        // Demo mode - just simulate upload
+        await new Promise(resolve => setTimeout(resolve, 500));
+        return;
+    }
+
+    const fileExt = file.name.split('.').pop();
+    const fileName = `${currentCategory}/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+
+    // Upload to Supabase Storage
+    const { data: uploadData, error: uploadError } = await supabaseClient.storage
+        .from('gallery')
+        .upload(fileName, file);
+
+    if (uploadError) throw uploadError;
+
+    // Get public URL
+    const { data: urlData } = supabaseClient.storage
+        .from('gallery')
+        .getPublicUrl(fileName);
+
+    // Save to database
+    const { error: dbError } = await supabaseClient
+        .from('gallery')
+        .insert({
+            category: currentCategory,
+            filename: file.name,
+            url: urlData.publicUrl,
+            storage_path: fileName
+        });
+
+    if (dbError) throw dbError;
+}
+
+// Delete Image
+function confirmDelete(id, url) {
+    imageToDelete = { id, url };
+    document.getElementById('delete-preview-img').src = url;
+    document.getElementById('delete-modal').classList.add('active');
+}
+
+function closeDeleteModal() {
+    document.getElementById('delete-modal').classList.remove('active');
+    imageToDelete = null;
+}
+
+async function deleteImage() {
+    if (!imageToDelete) return;
+
+    const { id } = imageToDelete;
+
+    if (!supabaseClient) {
+        // Demo mode
+        galleryImages = galleryImages.filter(img => img.id !== id);
+        renderGallery();
+        closeDeleteModal();
+        return;
+    }
+
+    try {
+        // Get storage path
+        const image = galleryImages.find(img => img.id === id);
+
+        if (image && image.storage_path) {
+            // Delete from storage
+            await supabaseClient.storage
+                .from('gallery')
+                .remove([image.storage_path]);
+        }
+
+        // Delete from database
+        const { error } = await supabaseClient
+            .from('gallery')
+            .delete()
+            .eq('id', id);
+
+        if (error) throw error;
+
+        galleryImages = galleryImages.filter(img => img.id !== id);
+        renderGallery();
+        updateCategoryCounts();
+    } catch (error) {
+        console.error('Delete error:', error);
+        alert('Błąd usuwania zdjęcia');
+    }
+
+    closeDeleteModal();
+}
+
+// =====================
 // EVENT LISTENERS
 // =====================
 
@@ -420,6 +700,72 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             closeDetailModal();
+            closeDeleteModal();
         }
     });
+
+    // =====================
+    // GALLERY EVENT LISTENERS
+    // =====================
+
+    // Admin navigation tabs
+    document.querySelectorAll('.admin-nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            switchSection(tab.dataset.section);
+        });
+    });
+
+    // Category tabs
+    document.querySelectorAll('.category-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            setCategory(tab.dataset.category);
+        });
+    });
+
+    // File input
+    const fileInput = document.getElementById('file-input');
+    const dropzone = document.getElementById('upload-dropzone');
+
+    if (fileInput && dropzone) {
+        dropzone.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            handleFileUpload(e.target.files);
+            e.target.value = ''; // Reset input
+        });
+
+        // Drag and drop
+        dropzone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropzone.classList.add('dragover');
+        });
+
+        dropzone.addEventListener('dragleave', () => {
+            dropzone.classList.remove('dragover');
+        });
+
+        dropzone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropzone.classList.remove('dragover');
+            handleFileUpload(e.dataTransfer.files);
+        });
+    }
+
+    // Delete confirmation
+    const confirmDeleteBtn = document.getElementById('confirm-delete-btn');
+    if (confirmDeleteBtn) {
+        confirmDeleteBtn.addEventListener('click', deleteImage);
+    }
+
+    // Close delete modal on overlay click
+    const deleteModal = document.getElementById('delete-modal');
+    if (deleteModal) {
+        deleteModal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeDeleteModal();
+            }
+        });
+    }
 });
