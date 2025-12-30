@@ -103,4 +103,64 @@
         <priority>0.9</priority>
     </url>
 
+    <!-- Subpage: Kuchnie na wymiar -->
+    <url>
+        <loc>https://lux-meble.pl/kuchnie</loc>
+        <lastmod>2025-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/kuchania-1.jpg</image:loc>
+            <image:title>Kuchnie na wymiar Trzebnica - Lux-Meble</image:title>
+            <image:caption>Ekskluzywne kuchnie na wymiar</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Subpage: Szafy wnękowe -->
+    <url>
+        <loc>https://lux-meble.pl/szafy</loc>
+        <lastmod>2025-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/szafa-1.jpg</image:loc>
+            <image:title>Szafy wnękowe Trzebnica - Lux-Meble</image:title>
+            <image:caption>Szafy wnękowe na wymiar</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Subpage: Garderoby -->
+    <url>
+        <loc>https://lux-meble.pl/garderoby</loc>
+        <lastmod>2025-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/szafa-2.jpg</image:loc>
+            <image:title>Garderoby na wymiar Trzebnica - Lux-Meble</image:title>
+            <image:caption>Garderoby walk-in na wymiar</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Subpage: Łazienki -->
+    <url>
+        <loc>https://lux-meble.pl/lazienki</loc>
+        <lastmod>2025-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://lux-meble.pl/images/lazienka-1.jpg</image:loc>
+            <image:title>Meble łazienkowe Trzebnica - Lux-Meble</image:title>
+            <image:caption>Meble łazienkowe na wymiar</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Subpage: Schody -->
+    <url>
+        <loc>https://lux-meble.pl/schody</loc>
+        <lastmod>2025-12-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
