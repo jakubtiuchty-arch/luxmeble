@@ -158,13 +158,31 @@ async function obsluzPrzycisk(zapytanie) {
 }
 
 export default async function handler(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
-    }
-
     // Bez tego adres webhooka wystarczyłby, żeby sterować botem z zewnątrz.
     if (req.headers['x-telegram-bot-api-secret-token'] !== process.env.TELEGRAM_WEBHOOK_SECRET) {
         return res.status(401).json({ error: 'Unauthorized' });
+    }
+
+    // Podgląd konfiguracji przy szukaniu przyczyny milczenia bota. Pokazuje,
+    // czy zmienne doszły do funkcji, nigdy ich wartości.
+    if (req.method === 'GET') {
+        const token = process.env.TELEGRAM_BOT_TOKEN || '';
+        let bot = null;
+        if (token) {
+            const kto = await wyslij('getMe', {});
+            bot = kto.ok ? `@${kto.result.username}` : `błąd: ${kto.description}`;
+        }
+        return res.status(200).json({
+            token: token ? `ustawiony (${token.length} znaków)` : 'BRAK',
+            bot,
+            dozwoloneCzaty: (process.env.TELEGRAM_ALLOWED_CHATS || '').split(',').filter(s => s.trim()).length,
+            supabase: process.env.SUPABASE_URL ? 'ustawiony' : 'BRAK',
+            kluczSupabase: process.env.SUPABASE_SERVICE_KEY ? 'ustawiony' : 'BRAK',
+        });
+    }
+
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Method not allowed' });
     }
 
     const aktualizacja = req.body || {};
