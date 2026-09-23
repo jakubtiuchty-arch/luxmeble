@@ -1,0 +1,10 @@
+node_modules/
+
+# Klucze do Supabase, Resend i bota Telegrama
+.env
+.env.*
+!.env.example
+
+.vercel
+.DS_Store
+*.log

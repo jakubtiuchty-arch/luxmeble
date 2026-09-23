@@ -10,8 +10,8 @@
 const SUPABASE_URL = 'https://tizciyilckwicjexlzgr.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_6YR_Zq0dMCoMZtvC08c4iw_8H0lT6KZ';
 
-// Hasło do panelu admin (zmień na własne!)
-const ADMIN_PASSWORD = 'luxmeble2024';
+// Hasło sprawdza serwer (zmienna ADMIN_PASSWORD na Vercelu) — w tym pliku go nie ma,
+// bo przeglądarka pokazuje go każdemu, kto otworzy admin.js.
 
 // =====================
 // INICJALIZACJA
@@ -60,17 +60,30 @@ function checkAuth() {
     }
 }
 
-function login(password) {
-    if (password === ADMIN_PASSWORD) {
-        sessionStorage.setItem('admin_logged_in', 'true');
-        showAdminPanel();
-        return true;
+async function login(password) {
+    try {
+        const res = await fetch('/api/gallery-admin', {
+            headers: { 'X-Admin-Password': password }
+        });
+        if (!res.ok) return false;
+    } catch (e) {
+        return false;
     }
-    return false;
+
+    // Hasło zostaje na czas sesji, bo każda operacja na zdjęciach musi je przesłać.
+    sessionStorage.setItem('admin_logged_in', 'true');
+    sessionStorage.setItem('admin_password', password);
+    showAdminPanel();
+    return true;
+}
+
+function hasloSesji() {
+    return sessionStorage.getItem('admin_password') || '';
 }
 
 function logout() {
     sessionStorage.removeItem('admin_logged_in');
+    sessionStorage.removeItem('admin_password');
     location.reload();
 }
 
@@ -547,39 +560,52 @@ async function handleFileUpload(files) {
     }, 1500);
 }
 
+/**
+ * Zmniejsza zdjęcie jeszcze w przeglądarce. Telefony robią zdjęcia po kilka
+ * megabajtów, a funkcja serwerowa przyjmuje ograniczone żądanie; przy okazji
+ * płótno gubi metadane, w tym współrzędne miejsca, gdzie zdjęcie powstało.
+ */
+function zmniejszZdjecie(file, maxBok = 1920) {
+    return new Promise((resolve, reject) => {
+        const czytnik = new FileReader();
+        czytnik.onerror = () => reject(new Error('Nie udało się odczytać pliku'));
+        czytnik.onload = () => {
+            const img = new Image();
+            img.onerror = () => reject(new Error('To nie jest obraz'));
+            img.onload = () => {
+                const skala = Math.min(1, maxBok / Math.max(img.width, img.height));
+                const canvas = document.createElement('canvas');
+                canvas.width = Math.round(img.width * skala);
+                canvas.height = Math.round(img.height * skala);
+                canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+                resolve(canvas.toDataURL('image/jpeg', 0.88));
+            };
+            img.src = czytnik.result;
+        };
+        czytnik.readAsDataURL(file);
+    });
+}
+
 async function uploadImage(file) {
-    if (!supabaseClient) {
-        // Demo mode - just simulate upload
-        await new Promise(resolve => setTimeout(resolve, 500));
-        return;
+    const plik = await zmniejszZdjecie(file);
+
+    const res = await fetch('/api/gallery-admin', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-Admin-Password': hasloSesji()
+        },
+        body: JSON.stringify({
+            plik,
+            kategoria: currentCategory,
+            tytul: file.name.replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ')
+        })
+    });
+
+    if (!res.ok) {
+        const tresc = await res.json().catch(() => ({}));
+        throw new Error(tresc.error || `Błąd wysyłki (${res.status})`);
     }
-
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${currentCategory}/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
-
-    // Upload to Supabase Storage
-    const { data: uploadData, error: uploadError } = await supabaseClient.storage
-        .from('gallery')
-        .upload(fileName, file);
-
-    if (uploadError) throw uploadError;
-
-    // Get public URL
-    const { data: urlData } = supabaseClient.storage
-        .from('gallery')
-        .getPublicUrl(fileName);
-
-    // Save to database
-    const { error: dbError } = await supabaseClient
-        .from('gallery')
-        .insert({
-            category: currentCategory,
-            filename: file.name,
-            url: urlData.publicUrl,
-            storage_path: fileName
-        });
-
-    if (dbError) throw dbError;
 }
 
 // Delete Image
@@ -608,23 +634,16 @@ async function deleteImage() {
     }
 
     try {
-        // Get storage path
-        const image = galleryImages.find(img => img.id === id);
+        // Plik i wiersz kasuje serwer, żeby jedno nie zostało bez drugiego.
+        const res = await fetch(`/api/gallery-admin?id=${encodeURIComponent(id)}`, {
+            method: 'DELETE',
+            headers: { 'X-Admin-Password': hasloSesji() }
+        });
 
-        if (image && image.storage_path) {
-            // Delete from storage
-            await supabaseClient.storage
-                .from('gallery')
-                .remove([image.storage_path]);
+        if (!res.ok) {
+            const tresc = await res.json().catch(() => ({}));
+            throw new Error(tresc.error || `Błąd usuwania (${res.status})`);
         }
-
-        // Delete from database
-        const { error } = await supabaseClient
-            .from('gallery')
-            .delete()
-            .eq('id', id);
-
-        if (error) throw error;
 
         galleryImages = galleryImages.filter(img => img.id !== id);
         renderGallery();
@@ -649,12 +668,16 @@ document.addEventListener('DOMContentLoaded', () => {
     checkAuth();
 
     // Login form
-    document.getElementById('login-form').addEventListener('submit', (e) => {
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const password = document.getElementById('password').value;
+        const blad = document.getElementById('login-error');
 
-        if (!login(password)) {
-            document.getElementById('login-error').textContent = 'Nieprawidłowe hasło';
+        blad.textContent = 'Sprawdzam…';
+        if (await login(password)) {
+            blad.textContent = '';
+        } else {
+            blad.textContent = 'Nieprawidłowe hasło';
         }
     });
 

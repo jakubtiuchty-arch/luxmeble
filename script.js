@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimation();
     initTestimonialsSlider();
     initGalleryFilter();
+    initGallery();
     initContactForm();
     initScrollAnimations();
     initParticles();
@@ -305,7 +306,6 @@ function initTestimonialsSlider() {
  */
 function initGalleryFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -315,18 +315,116 @@ function initGalleryFilter() {
             filterBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
 
-            // Filter items
-            galleryItems.forEach(item => {
-                const category = item.getAttribute('data-category');
-
-                if (filter === 'all' || category === filter) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeIn 0.5s ease forwards';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            applyGalleryFilter(filter);
         });
+    });
+}
+
+/**
+ * Pokazuje kafle wybranej kategorii. Listę kafli czytamy przy każdym kliknięciu,
+ * bo siatkę wypełnia initGallery() już po wczytaniu strony.
+ */
+function applyGalleryFilter(filter) {
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        const category = item.getAttribute('data-category');
+
+        if (filter === 'all' || category === filter) {
+            item.style.display = 'block';
+            item.style.animation = 'fadeIn 0.5s ease forwards';
+            // Kafel ukryty filtrem nie wyzwala obserwatora animacji wejścia,
+            // więc po ponownym pokazaniu zostałby przezroczysty.
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+/**
+ * Realizacje z bazy
+ *
+ * Zdjęcia dodane przez klienta leżą w Supabase, a /api/gallery je wystawia.
+ * Dopóki baza jest pusta albo endpoint nie odpowiada, na stronie zostają kafle
+ * wpisane w HTML — dzięki temu galeria nigdy nie jest pusta.
+ */
+const NAZWY_KATEGORII = {
+    kuchnie: 'Kuchnia',
+    szafy: 'Szafa',
+    garderoby: 'Garderoba',
+    lazienki: 'Łazienka'
+};
+
+async function initGallery() {
+    const grid = document.querySelector('[data-gallery-grid]');
+    if (!grid) return;
+
+    let items = [];
+    try {
+        const res = await fetch('/api/gallery');
+        if (!res.ok) return;
+        items = (await res.json()).items || [];
+    } catch (e) {
+        return;
+    }
+
+    if (items.length === 0) return;
+
+    grid.innerHTML = items.map((item, i) => budujKafel(item, i)).join('');
+
+    // Filtr mógł być już przestawiony, zanim zdjęcia doszły.
+    const aktywny = document.querySelector('.filter-btn.active');
+    applyGalleryFilter(aktywny ? aktywny.getAttribute('data-filter') : 'all');
+
+    obserwujNoweKafle(grid);
+}
+
+function budujKafel(item, index) {
+    const kategoria = NAZWY_KATEGORII[item.category] || 'Realizacja';
+    const tytul = escapeHtml(item.title || kategoria);
+    const rok = item.createdAt ? new Date(item.createdAt).getFullYear() : '';
+    // Pierwszy kafel zajmuje podwójne pole — tak wygląda układ siatki w CSS.
+    const klasa = index === 0 ? 'gallery-item large' : 'gallery-item';
+
+    return `
+                <div class="${klasa}" data-category="${escapeHtml(item.category)}">
+                    <div class="gallery-image">
+                        <img src="${escapeHtml(item.url)}" alt="${tytul} - realizacja Lux-Meble" loading="lazy">
+                        <div class="gallery-overlay">
+                            <span class="gallery-category">${kategoria}</span>
+                            <h4>${tytul}</h4>
+                            ${rok ? `<p>Realizacja ${rok}</p>` : ''}
+                        </div>
+                    </div>
+                </div>`;
+}
+
+function escapeHtml(wartosc) {
+    return String(wartosc ?? '').replace(/[&<>"']/g, z => (
+        { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[z]
+    ));
+}
+
+/**
+ * Kafle z bazy powstają już po starcie initScrollAnimations, więc wjeżdżają
+ * z dołu na własnym obserwatorze — tą samą mechaniką co reszta sekcji.
+ */
+function obserwujNoweKafle(grid) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    grid.querySelectorAll('.gallery-item').forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        observer.observe(el);
     });
 }
 

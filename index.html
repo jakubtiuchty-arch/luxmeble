@@ -556,9 +556,12 @@
                 <button class="filter-btn active" data-filter="all">Wszystkie</button>
                 <button class="filter-btn" data-filter="kuchnie">Kuchnie</button>
                 <button class="filter-btn" data-filter="szafy">Szafy</button>
+                <button class="filter-btn" data-filter="garderoby">Garderoby</button>
                 <button class="filter-btn" data-filter="lazienki">Łazienki</button>
             </div>
-            <div class="gallery-grid">
+            <!-- Kafle poniżej są wyświetlane dopóki w bazie nie ma zdjęć. Gdy tylko
+                 pojawi się tam pierwsze, script.js podmienia zawartość siatki. -->
+            <div class="gallery-grid" data-gallery-grid>
                 <!-- Kuchnie -->
                 <div class="gallery-item large" data-category="kuchnie">
                     <div class="gallery-image">
