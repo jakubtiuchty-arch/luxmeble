@@ -38,10 +38,9 @@ export default async function handler(req, res) {
                 id: row.id,
                 category: row.category,
                 url: row.url,
-                // Podpis wpisuje panel albo bot Telegrama; przy zdjęciach wgranych
-                // bez opisu zostaje nazwa pliku bez rozszerzenia.
-                title: (row.title || '').trim()
-                    || (row.filename || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').trim(),
+                // Podpis wpisuje bot Telegrama z opisu zdjęcia. Bez niego kafel sam
+                // dobiera tytuł z kategorii — nazwa pliku to znacznik czasu, nie opis.
+                title: (row.title || '').trim() || null,
                 createdAt: row.created_at,
             }));
 

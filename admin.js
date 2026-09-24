@@ -597,8 +597,9 @@ async function uploadImage(file) {
         },
         body: JSON.stringify({
             plik,
-            kategoria: currentCategory,
-            tytul: file.name.replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ')
+            // Bez tytułu: nazwa pliku z telefonu („IMG_4521") nie jest opisem,
+            // a strona sama dobierze podpis z kategorii.
+            kategoria: currentCategory
         })
     });
 

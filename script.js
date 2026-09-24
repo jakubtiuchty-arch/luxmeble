@@ -381,7 +381,8 @@ async function initGallery() {
 
 function budujKafel(item, index) {
     const kategoria = NAZWY_KATEGORII[item.category] || 'Realizacja';
-    const tytul = escapeHtml(item.title || kategoria);
+    // Bez podpisu tytuł w stylu starszych realizacji: „Kuchnia na wymiar".
+    const tytul = escapeHtml(item.title || `${kategoria} na wymiar`);
     const rok = item.createdAt ? new Date(item.createdAt).getFullYear() : '';
     // Pierwszy kafel zajmuje podwójne pole — tak wygląda układ siatki w CSS.
     const klasa = index === 0 ? 'gallery-item large' : 'gallery-item';
