@@ -7,6 +7,45 @@ const supabase = createClient(
     process.env.SUPABASE_SERVICE_KEY
 );
 
+/**
+ * Zgłoszenie na Telegram przez bota galerii (@luxmeble_bot). Odbiorcy są
+ * w TELEGRAM_LEADS_CHATS, osobno od listy osób dodających zdjęcia. Odbiorca
+ * musi wcześniej napisać do bota — Telegram nie pozwala botowi zacząć rozmowy.
+ */
+async function powiadomTelegram({ name, email, phone, message }) {
+    const token = process.env.TELEGRAM_BOT_TOKEN;
+    const odbiorcy = (process.env.TELEGRAM_LEADS_CHATS || '').split(',').map(s => s.trim()).filter(Boolean);
+    if (!token || !odbiorcy.length) return;
+
+    // Zwykły tekst bez parse_mode — dane z formularza nie muszą być escapowane,
+    // a numer telefonu Telegram i tak zamienia w link do połączenia.
+    const tekst = [
+        'Nowe zapytanie ze strony',
+        '',
+        `Imię i nazwisko: ${name}`,
+        `Telefon: ${phone || 'nie podano'}`,
+        `E-mail: ${email}`,
+        '',
+        message ? `Wiadomość:\n${message}` : 'Bez wiadomości.',
+        '',
+        new Date().toLocaleString('pl-PL', { timeZone: 'Europe/Warsaw' }),
+    ].join('\n').slice(0, 4000);
+
+    await Promise.all(odbiorcy.map(async chatId => {
+        try {
+            const r = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: chatId, text: tekst }),
+            });
+            const wynik = await r.json();
+            if (!wynik.ok) console.error(`Telegram (${chatId}):`, wynik.description);
+        } catch (e) {
+            console.error(`Telegram (${chatId}):`, e);
+        }
+    }));
+}
+
 export default async function handler(req, res) {
     // CORS headers
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -46,6 +85,9 @@ export default async function handler(req, res) {
             console.error('Database error:', dbError);
             throw new Error('Błąd zapisu do bazy');
         }
+
+        // Przed mailami: gdy Resend zawiedzie, zgłoszenie i tak dotrze na telefon.
+        await powiadomTelegram({ name, email, phone, message });
 
         // Wyślij email powiadomienie do właściciela
         await resend.emails.send({
